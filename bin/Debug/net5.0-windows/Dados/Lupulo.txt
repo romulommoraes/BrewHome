@@ -1,0 +1,5 @@
+Magnum;Amargor;13,5
+Nugget;Amargor;11,7
+Citra;A&A;13,7
+Admiral;Amargor;14,5
+Chinook;A&A;3,7

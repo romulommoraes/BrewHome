@@ -1,0 +1,40 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Munich Helles Teste 
+ Estilo: Munich Helles
+ 
+ Volume: 10(L) 
+ OG: 1048,6
+ FG: 1009,7
+ ABV: 5,1
+ SRM: 4,2
+ EBC: 8,4
+ IBU: 17
+ 
+ Fermentáveis:
+ Pale_Ale: 2(KG)
+ Munich_Light: 0,2(KG)
+ 
+ Lúpulos:
+ Magnum: 5(g)
+ 
+ Levedura:
+ US-05
+ 
+ Mosturacao: 60(Min) 
+ Fervura: 60(Min)
+ Tempo de Fermentação: PLACEHOLDER
+ Temperatura de Fermentação: PLACEHOLDER
+ Tempo de Maturação: PLACEHOLDER
+ Temperatura de Maturação: PLACEHOLDER
+ DryHopping: PLACEHOLDER
+ Comentários: PLACEHOLDER
+ 
+
+ *******************************************************
+ ***************** 14/01/2022 18:20:21 *****************
+ *******************************************************

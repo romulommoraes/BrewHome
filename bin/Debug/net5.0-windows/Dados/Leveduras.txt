@@ -1,0 +1,4 @@
+US-05;Ale;80;Média
+S-04;Ale;70;Alta
+S-33;Ale;74;Média
+DonaBenta;Pão;65;Baixa

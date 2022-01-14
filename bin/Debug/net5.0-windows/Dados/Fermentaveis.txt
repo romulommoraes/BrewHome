@@ -1,0 +1,9 @@
+Pilsner;Base;4;81
+Pale_Ale;Base;5;82
+Munich_Light;Base;16;78
+Munich_Dark;Base;22;78
+Black;Especial;1400;70
+Vienna;Base;7;81;
+Trigo(Farinha);Adjunto;3;74
+Trigo(Malte);Base;5;83
+Arroz;Adjunto;0,1;90
