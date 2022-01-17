@@ -1,9 +1,69 @@
-Pilsner;Base;4;81
-Pale_Ale;Base;5;82
-Munich_Light;Base;16;78
-Munich_Dark;Base;22;78
-Black;Especial;1400;70
-Vienna;Base;7;81;
-Trigo(Farinha);Adjunto;3;74
-Trigo(Malte);Base;5;83
-Arroz;Adjunto;0,1;90
+Melaço;Adjunto;160;78
+Açucar Mascavo(claro);Adjunto;8;100
+Açucar Mascavo(escuro);Adjunto;50;100
+2-Row Malt;Base;4;78
+6-Row Malt;Base;4;76
+Abbey Malt;Especial;34;76
+Acidulated Malt;Especial;6;59
+Amber Malt;Especial;44;76
+Aromatic Malt;Especial;50;78
+Aveia Malte;Especial;2;80
+Aveia(Flocos);Especial;2;76
+Aveia(Golden Naked);Especial;14;80
+Beechwood Smoked Malt;Especial;18;80
+Biscuit Malt;Especial;46;78
+Black Malt;Especial;1000;54
+Black Patent;Especial;1000;54
+Bohemian Pilsner;Base;4;80
+Brown Malt;Especial;130;70
+CaraAroma;Especial;260;76
+CaraBelge;Especial;32;74
+Carafa 1;Especial;674;70
+Carafa II;Especial;824;70
+CaraFoam;Especial;4;78
+CaraHell;Especial;22;80
+CaraMunich I;Especial;98;72
+CaraMunich I;Especial;112;72
+Carapils;Especial;4;87
+CaraRed;Especial;40;76
+CaraVienna Malt;Especial;44;74
+Centeio Malt;Especial;6;72
+Centeio(Chocolate Rye);Especial;500;67
+Centeio(Flocos);Especial;4;78
+Cevada(Flocos);Especial;4;70
+Cherrywood Beechwood Smoked Malt;Especial;10;74
+Chocolate Malt;Especial;700;74
+Crystal 10;Especial;20;76
+Crystal 120;Especial;240;72
+Crystal 20;Especial;40;76
+Crystal 40;Especial;80;76
+Crystal 60;Especial;120;72
+Crystal 80;Especial;160;72
+Dark Chocolate Malt;Especial;840;74
+Extra Special;Especial;260;76
+Golden Promise;Base;4;83
+Honey Malt;Especial;50;80
+Irish Stout Malt;Base;4;83
+Kolsch Malt;Base;8;78
+Light Munich Malt;Base;12;80
+Malte de Trigo;Especial;4;87
+Maris Otter;Base;6;83
+Melanoidin Malt;Especial;40;80
+Milho(Flocos);Especial;2;80
+Munich 10 (Dark Munich);Especial;20;76
+Munich Malt;Base;18;80
+Pale Ale;Base;6;80
+Pale Chocolate;Especial;700;74
+Pilsen;Base;4;78
+Red X;Base;24;78
+Roasted Barley;Especial;600;54
+Special B;Especial;360;65
+Special Roast;Especial;100;72
+Trigo (White Wheat);Especial;4;87
+Trigo Vermelho;Especial;6;87
+Trigo(Chocolate Wheat);Especial;800;72
+Trigo(German Wheat);Especial;4;85
+Trigo(Oak Smoked);Especial;6;87
+UK Pilsner 2 Row;Base;4;78
+Victory Malt;Especial;52;74
+Vienna Malt;Base;8;78

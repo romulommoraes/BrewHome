@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BrewHome.Classes.Services
 {
@@ -97,10 +98,26 @@ namespace BrewHome.Classes.Services
             receitaToJSon.FG = Math.Round(receita.FG, 1);
             receitaToJSon.IBU = Math.Round(receita.IBU, 1);
             receitaToJSon.SRM = Math.Round(receita.COR, 1);
+            receitaToJSon.Calorias = Math.Round(receita.Calorias, 1);
             receitaToJSon.EBC = Math.Round(receita.COR * 2, 1);
             receitaToJSon.TempoMostura = tempomostura;
             receitaToJSon.TempoFervura = tempofervura;
+
+            receitaToJSon.Maturacao = receita.Maturacao;
+            receitaToJSon.Fermentacao = receita.Fermentacao;
+
+            receitaToJSon.Dryhopping = receita.Dryhopping;
+
+            receitaToJSon.ComentariosMostura = receita.ComentariosMostura;
+            receitaToJSon.ComentariosFervura = receita.ComentariosFervura;
+            receitaToJSon.ComentariosFermMat = receita.ComentariosFermMat;
+
             receitaToJSon.Levedura = receita.Levedura.Nome;
+            if (receitaToJSon.RampasMostura != null)
+            {
+                receitaToJSon.RampasMostura.Clear();
+            }
+            receitaToJSon.RampasMostura.AddRange(receita.RampasMostura);
 
             foreach (var fermentavel in receita.Fermentaveis)
             {
@@ -132,16 +149,22 @@ namespace BrewHome.Classes.Services
             {
                 lupulos += $"\n {item.Nome}: {item.Peso}(g)";
             }
+            string rampas = receitaToJSon.ExportRampas();
+            string dryhopping = (receitaToJSon.Dryhopping[0] != "") ? $"{receitaToJSon.Dryhopping[0]}, { receitaToJSon.Dryhopping[1]}g, { receitaToJSon.Dryhopping[2]}(Dias)" : "-";
             string levedura = $"Levedura:\n {receitaToJSon.Levedura}";
             string etapas = $"Mosturacao: {receitaToJSon.TempoMostura}(Min) " +
-                $"\n Fervura: {receitaToJSon.TempoFervura}(Min)" +
-                $"\n Tempo de Fermentação: PLACEHOLDER" +
-                $"\n Temperatura de Fermentação: PLACEHOLDER" +
-                $"\n Tempo de Maturação: PLACEHOLDER" +
-                $"\n Temperatura de Maturação: PLACEHOLDER" +
-                $"\n DryHopping: PLACEHOLDER";
-            string comentarios = "Comentários: PLACEHOLDER";
-
+                $"\n Rampas:" +
+                $"\n{rampas} " +
+                $"\n Comentários: {receitaToJSon.ComentariosMostura} " +
+                $"\n\n Fervura: {receitaToJSon.TempoFervura}(Min)" +
+                $"\n Comentários: {receitaToJSon.ComentariosFervura} " +
+                $"\n\n Tempo de Fermentação: {receitaToJSon.Fermentacao[1]}(Dias)" +
+                $"\n Temperatura de Fermentação: {receitaToJSon.Fermentacao[0]}°C" +
+                $"\n\n Tempo de Maturação: {receitaToJSon.Maturacao[1]}(Dias)" +
+                $"\n Temperatura de Maturação:{receitaToJSon.Maturacao[0]}°C" +
+                $"\n\n DryHopping: {dryhopping}" +
+                $"\n\n Comentários: {receitaToJSon.ComentariosFermMat}";
+                
             string header = "************* RECEITA GERADA POR BREWHOME *************";
             string footer = $"***************** {DateTime.Now} *****************";
             string export = "";
@@ -156,7 +179,6 @@ namespace BrewHome.Classes.Services
             export += $"\n \n {lupulos}";
             export += $"\n \n {levedura}";
             export += $"\n \n {etapas}";
-            export += $"\n {comentarios}";
             export += $"\n \n";
             export += $"\n {separador}";
             export += $"\n {footer}";

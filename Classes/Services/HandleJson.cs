@@ -29,10 +29,23 @@ namespace BrewHome.Classes.Services
             receitaToJSon.TempoMostura = tempomostura; 
             receitaToJSon.TempoFervura = tempofervura;
             receitaToJSon.Levedura = receita.Levedura.Nome;
+            receitaToJSon.Calorias = Math.Round(receita.Calorias, 1);
+            receitaToJSon.Maturacao = receita.Maturacao;
+            receitaToJSon.Fermentacao = receita.Fermentacao;
+            receitaToJSon.Dryhopping = receita.Dryhopping;
 
+            receitaToJSon.ComentariosMostura = receita.ComentariosMostura;
+            receitaToJSon.ComentariosFervura = receita.ComentariosFervura;
+            receitaToJSon.ComentariosFermMat = receita.ComentariosFermMat;
+
+            if (receitaToJSon.RampasMostura != null)
+            {
+                receitaToJSon.RampasMostura.Clear();
+            }
+            receitaToJSon.RampasMostura.AddRange(receita.RampasMostura);
             foreach (var fermentavel in receita.Fermentaveis)
             {
-               // MessageBox.Show(receita.Fermentaveis.Count.ToString());
+
                 FermentavelToJson fJson = new(fermentavel.Nome, fermentavel.PesoKG);
                 receitaToJSon.Fermentaveis.Add(fJson);
             }

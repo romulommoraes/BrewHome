@@ -4,27 +4,27 @@
  *******************************************************
  
 
- Receita: American Ale Teste 
- Estilo: American Ale
+ Receita: Bohemia Romulus 
+ Estilo: Bohemian Pilsner
  
  Volume: 10(L) 
- OG: 1051,3
- FG: 1010,3
- ABV: 5,4
- SRM: 14,5
- EBC: 29
- IBU: 27
+ OG: 1050,8
+ FG: 1013,2
+ ABV: 4,9
+ SRM: 4,3
+ EBC: 8,6
+ IBU: 37,4
  
  Fermentáveis:
- Pale_Ale: 2(KG)
- Black: 0,05(KG)
- Trigo(Farinha): 0,3(KG)
+ Pilsen: 2(KG)
+ CaraFoam: 0,1(KG)
+ Munich Malt: 0,3(KG)
  
  Lúpulos:
- Nugget: 10(g)
+ Magnum: 12(g)
  
  Levedura:
- US-05
+ M.Jack M84
  
  Mosturacao: 60(Min) 
  Fervura: 60(Min)
@@ -37,5 +37,5 @@
  
 
  *******************************************************
- ***************** 14/01/2022 18:17:45 *****************
+ ***************** 14/01/2022 23:14:47 *****************
  *******************************************************

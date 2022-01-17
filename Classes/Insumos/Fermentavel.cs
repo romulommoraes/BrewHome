@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrewHome.Classes.Insumos
 {
-    public class Fermentavel : IFermentavel
+    public class Fermentavel 
     {
         public Fermentavel(string nome, string tipo, double ebc, double extrato, double pesoKG)
         {

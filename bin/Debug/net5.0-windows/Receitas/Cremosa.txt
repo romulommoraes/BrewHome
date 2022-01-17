@@ -4,28 +4,33 @@
  *******************************************************
  
 
- Receita: Munich Helles Teste 
- Estilo: Munich Helles
+ Receita: Cremosa 
+ Estilo: Cream Ale
  
  Volume: 10(L) 
- OG: 1048,6
- FG: 1009,7
- ABV: 5,1
- SRM: 4,2
- EBC: 8,4
- IBU: 17
+ OG: 1047
+ FG: 1009
+ ABV: 5
+ SRM: 3,2
+ EBC: 6,4
+ IBU: 15,7
  
  Fermentáveis:
- Pale_Ale: 2(KG)
- Munich_Light: 0,2(KG)
+ Pilsen: 2(KG)
+ CaraFoam: 0,1(KG)
+ Trigo (White Wheat): 0,1(KG)
  
  Lúpulos:
  Magnum: 5(g)
  
  Levedura:
- US-05
+ Safale US-05
  
  Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 50°C: 10 Min 
+ Temperatura: 65°C: 50 Min 
+ 
  Fervura: 60(Min)
  Tempo de Fermentação: PLACEHOLDER
  Temperatura de Fermentação: PLACEHOLDER
@@ -36,5 +41,5 @@
  
 
  *******************************************************
- ***************** 14/01/2022 18:20:21 *****************
+ ***************** 15/01/2022 23:03:36 *****************
  *******************************************************

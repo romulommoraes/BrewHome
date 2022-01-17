@@ -20,19 +20,32 @@ namespace BrewHome.Classes
         public List<Lupulo> Lupulos { get; set; }
 
         public Levedura Levedura { get; set; }
-        public double TempoMostura{ get; set; }
-        public double TempoFervura { get; set; }
+
         public double OG { get; set; } //calcular com base nos fermentáveis e tempo de mosturação
         public double FG { get; set; } //calcular com base na atenuação da levedura
-        public double COR { get; set; } //EBC (SRM*2)
+        public double COR { get; set; } //srm  ------ EBC (SRM*2)
         public double IBU { get; set; } //calcular com base nos lupulos
         public double ABV { get; set; } //calcular com base na OG/FG, e volume
+        public double Calorias { get; set; }
+        public double TempoMostura { get; set; }
+        public List<double[]> RampasMostura { get; set; }
+        public double[] Fermentacao { get; set; }
+        public double[] Maturacao { get; set; }
+        public double TempoFervura { get; set; }
+        public string[] Dryhopping { get; set; }
+        public string ComentariosMostura { get; set; }
+        public string ComentariosFervura { get; set; }
+        public string ComentariosFermMat { get; set; }
 
 
         public Receita()
         {
             Fermentaveis = new();
             Lupulos = new();
+            RampasMostura = new();
+            Fermentacao = new double[2];
+            Maturacao = new double[2];
+            Dryhopping = new string[3];
         }
         public void SetNome(string nome)
         {
