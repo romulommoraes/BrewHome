@@ -6,7 +6,6 @@ C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\Debug\net5.0-windows\
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\Debug\net5.0-windows\ref\BrewHome.dll
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\Debug\net5.0-windows\BrewHome.pdb
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.csproj.AssemblyReference.cache
-C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form1.resources
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.csproj.GenerateResource.cache
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.AssemblyInfoInputs.cache
@@ -21,3 +20,8 @@ C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\Interop.stdole.dll
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.csproj.ResolveComReference.cache
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Properties.Resources.resources
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_intro.resources
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_receitas.resources
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_sobre.resources
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_edit_ferm.resources
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_edit_lupulo.resources

@@ -1,7 +1,7 @@
 ﻿
 namespace BrewHome
 {
-    partial class Form1
+    partial class Form_receitas
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace BrewHome
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_receitas));
             this.txt_Nome = new System.Windows.Forms.TextBox();
             this.txtVolume = new System.Windows.Forms.TextBox();
             this.txt_PesoKG = new System.Windows.Forms.TextBox();
@@ -773,7 +773,7 @@ namespace BrewHome
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::BrewHome.Properties.Resources.SRM;
             this.pictureBox1.Location = new System.Drawing.Point(66, 375);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(178, 326);
@@ -1195,7 +1195,7 @@ namespace BrewHome
             this.Txt_TempoFermentacao.TabIndex = 38;
             this.Txt_TempoFermentacao.Text = "7";
             // 
-            // Form1
+            // Form_receitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1230,9 +1230,10 @@ namespace BrewHome
             this.Controls.Add(this.txt_PesoKG);
             this.Controls.Add(this.txt_Nome);
             this.Controls.Add(this.groupBox2);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form_receitas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "BrewHome 1.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

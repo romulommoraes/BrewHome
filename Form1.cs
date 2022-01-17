@@ -17,7 +17,7 @@ namespace BrewHome
 {
 
 
-    public partial class Form1 : Form
+    public partial class Form_receitas : Form
     {
 
         List<Fermentavel> fermentaveisLista = new();
@@ -40,7 +40,7 @@ namespace BrewHome
 
         Receita receita = new();
 
-        public Form1()
+        public Form_receitas()
         {
             InitializeComponent();
            
@@ -246,11 +246,8 @@ namespace BrewHome
                 string selectedTipo = lv_fermentaveis.SelectedItems[0].SubItems[1].Text;
                 string selectedSRM = lv_fermentaveis.SelectedItems[0].SubItems[2].Text;
                 string selectedExtrato = lv_fermentaveis.SelectedItems[0].SubItems[3].Text;
-
-
                 
                 Fermentavel selected = new(selectedNome, selectedTipo, double.Parse(selectedSRM), double.Parse(selectedExtrato), double.Parse(txt_PesoKG.Text));
-
 
                 if (fermentaveisMosto.Count > 0)
                 {
@@ -260,8 +257,8 @@ namespace BrewHome
                         if (ferm.Nome.Equals(selectedNome))
                         {
                             ferm.PesoKG += double.Parse(txt_PesoKG.Text);
-
                             contem = true;
+                            CalcProp();
                             break;
                         }
                     }
@@ -322,7 +319,7 @@ namespace BrewHome
         }
 
 
-
+        //remover fermentável
         private void btn_rmvFermento_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < fermentaveisMosto.Count; i++)
@@ -331,15 +328,15 @@ namespace BrewHome
                 {
                     if (fermentaveisMosto[i].Nome.Equals(lv_selecionados.SelectedItems[0].SubItems[0].Text))
                     {
-
                         fermentaveisMosto.Remove(fermentaveisMosto[i]);
                         Loadlv_selecionados();
-                        return;
+                        break;
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("nenhum item selecionado");            
+                    MessageBox.Show("nenhum item selecionado");
+                    break;
                 }
             }
         }
@@ -499,14 +496,9 @@ namespace BrewHome
             {
                 tb *= -1;
             }
-            trackBar1.Value = (int)tb;
-
-         
+            trackBar1.Value = (int)tb;        
 
         }
-
-
-
 
         private void button2_Click(object sender, EventArgs e)
         {

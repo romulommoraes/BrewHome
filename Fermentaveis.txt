@@ -1,4 +1,0 @@
-Pilsner	Base	2	81
-Pale Ale	Base 4	80
-Munich Light	Base	20	79
-Munich Dark	Especial	80	60
