@@ -297,7 +297,7 @@ namespace BrewHome
             }
             catch (Exception)
             {
-                if (receita.Estilo == null || receita.Estilo == "")
+                if (receita.Estilo == null || receita.Estilo == "" || comboBox1.SelectedIndex == 0)
                 {
                     //MessageBox.Show("Nenhum estilo selecionado");
                 }
@@ -705,7 +705,6 @@ namespace BrewHome
                 {
                     MessageBox.Show("Peso inválido");
                 }
-
             }
         }
         private void txt_peso_g_TextChanged(object sender, EventArgs e)
@@ -725,7 +724,6 @@ namespace BrewHome
                             Loadlv_lp_selecionados();
                             break;
                         }
-
                     }
                 }
             }
@@ -775,8 +773,6 @@ namespace BrewHome
             }
             catch (Exception)
             {
-
-
             }
         }
         private void lv_lpselecionados_SelectedIndexChanged(object sender, EventArgs e)
@@ -787,7 +783,6 @@ namespace BrewHome
             }
             catch (Exception)
             {
-
             }
         }
 
@@ -1048,8 +1043,7 @@ namespace BrewHome
             }
         }
         private void txt_rampa_min_T1_TextChanged(object sender, EventArgs e)
-        {
-            
+        {            
             TextBox textbox = sender as TextBox;
 
             if (validarTxtBox(textbox, regnum))
@@ -1141,8 +1135,7 @@ namespace BrewHome
                 return true;
             }
             else
-            {
-                
+            {                
                 if (txtbox.Text.Length > 1)
                 {
                     SystemSounds.Beep.Play();
@@ -1156,6 +1149,7 @@ namespace BrewHome
             }
         }
 
+        //REVER ISSO COM CALMA
         private void validarRampas()
         {
             R1 = (txt_rampa_min_T1.Text != "") ? double.Parse(txt_rampa_min_T1.Text) : 0;

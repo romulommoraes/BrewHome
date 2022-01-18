@@ -7,7 +7,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +21,7 @@ namespace BrewHome
         List<Lupulo> lupuloLista = new();
         List<Lupulo> lupulosSelecionados = new();
         string filepathRaiz = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+        Regex regnum = new Regex(@"^\d*\,?\d+$|^[,]{1}$|^\d*\,$");
         public Form_edit_lupulo()
         {
             InitializeComponent();
@@ -186,19 +189,30 @@ namespace BrewHome
 
         private void txt_alfa_acido_TextChanged(object sender, EventArgs e)
         {
-            if (!txt_alfa_acido.Text.Contains(".") && !txt_alfa_acido.Text.Contains("-"))
-            {
-                double teste = 0;
-                bool parseSucessoalfa_acido = double.TryParse(txt_alfa_acido.Text, out teste);
+            TextBox textbox = sender as TextBox;
+            btn_submeter.Enabled = (validarTxtBox(textbox, regnum)) ? true : false;
+        }
 
-                txt_alfa_acido.ForeColor = (txt_alfa_acido.Text == "") ? Color.Red : Color.Black;
-                txt_alfa_acido.ForeColor = (!parseSucessoalfa_acido) ? Color.Red : Color.Black;
-                btn_submeter.Enabled = (txt_alfa_acido.ForeColor == Color.Red) ? false : true;
+
+        private bool validarTxtBox(TextBox txtbox, Regex regex)
+        {
+            if (regex.IsMatch(txtbox.Text))
+            {
+                return true;
             }
             else
             {
-                btn_submeter.Enabled = false;
-                txt_alfa_acido.ForeColor = Color.Red;
+
+                if (txtbox.Text.Length > 1)
+                {
+                    SystemSounds.Beep.Play();
+                    txtbox.Text = txtbox.Text.Remove(txtbox.Text.Length - 1);
+                }
+                else
+                {
+                    txtbox.Text = "";
+                }
+                return false;
             }
         }
     }

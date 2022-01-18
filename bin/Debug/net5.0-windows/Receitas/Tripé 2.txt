@@ -1,0 +1,53 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Tripé 2 
+ Estilo: Belgian Trippel
+ 
+ Volume: 10(L) 
+ OG: 1077
+ FG: 1012
+ ABV: 8,5
+ SRM: 6,6
+ EBC: 13,2
+ IBU: 21,8
+ 
+ Fermentáveis:
+ Maris Otter: 0,5(KG)
+ Munich Malt: 0,5(KG)
+ Pale Ale: 2(KG)
+ Trigo(German Wheat): 0,5(KG)
+ 
+ Lúpulos:
+ Citra: 9(g)
+ 
+ Levedura:
+ Safale BE-256
+ 
+ Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 50°C: 10 Min 
+ Temperatura: 65°C: 50 Min 
+ 
+ Comentários: teste 
+
+ Fervura: 60(Min)
+ Comentários: teste 
+
+ Tempo de Fermentação: 7(Dias)
+ Temperatura de Fermentação: 18°C
+
+ Tempo de Maturação: 5(Dias)
+ Temperatura de Maturação:1°C
+
+ DryHopping: -
+
+ Comentários: teste
+ 
+
+ *******************************************************
+ ***************** 17/01/2022 23:48:21 *****************
+ *******************************************************

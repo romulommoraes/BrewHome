@@ -34,7 +34,6 @@ namespace BrewHome
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_tipo = new System.Windows.Forms.ComboBox();
-            this.txt_floculacao = new System.Windows.Forms.TextBox();
             this.txt_atenuacao = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.btn_sair = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@ namespace BrewHome
             this.btn_add_lev = new System.Windows.Forms.Button();
             this.lv_levedura = new System.Windows.Forms.ListView();
             this.btn_submeter = new System.Windows.Forms.Button();
+            this.comboBox_Flocula = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
@@ -50,9 +50,9 @@ namespace BrewHome
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(552, 307);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 15);
+            this.label4.Size = new System.Drawing.Size(64, 15);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Extrato";
+            this.label4.Text = "Floculação";
             // 
             // lbl_atenuacao
             // 
@@ -89,15 +89,6 @@ namespace BrewHome
             this.comboBox_tipo.Name = "comboBox_tipo";
             this.comboBox_tipo.Size = new System.Drawing.Size(137, 23);
             this.comboBox_tipo.TabIndex = 22;
-            // 
-            // txt_floculacao
-            // 
-            this.txt_floculacao.Enabled = false;
-            this.txt_floculacao.Location = new System.Drawing.Point(552, 327);
-            this.txt_floculacao.Name = "txt_floculacao";
-            this.txt_floculacao.Size = new System.Drawing.Size(137, 23);
-            this.txt_floculacao.TabIndex = 21;
-            this.txt_floculacao.TextChanged += new System.EventHandler(this.txt_floculacao_TextChanged);
             // 
             // txt_atenuacao
             // 
@@ -178,18 +169,28 @@ namespace BrewHome
             this.btn_submeter.UseVisualStyleBackColor = true;
             this.btn_submeter.Click += new System.EventHandler(this.btn_submeter_Click);
             // 
+            // comboBox_Flocula
+            // 
+            this.comboBox_Flocula.Enabled = false;
+            this.comboBox_Flocula.FormattingEnabled = true;
+            this.comboBox_Flocula.Location = new System.Drawing.Point(552, 327);
+            this.comboBox_Flocula.Name = "comboBox_Flocula";
+            this.comboBox_Flocula.Size = new System.Drawing.Size(137, 23);
+            this.comboBox_Flocula.TabIndex = 28;
+            this.comboBox_Flocula.SelectedIndexChanged += new System.EventHandler(this.comboBox_Flocula_SelectedIndexChanged);
+            // 
             // Form_edit_leveduras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 489);
+            this.Controls.Add(this.comboBox_Flocula);
             this.Controls.Add(this.btn_submeter);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_atenuacao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox_tipo);
-            this.Controls.Add(this.txt_floculacao);
             this.Controls.Add(this.txt_atenuacao);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.btn_sair);
@@ -212,7 +213,6 @@ namespace BrewHome
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_tipo;
-        private System.Windows.Forms.TextBox txt_floculacao;
         private System.Windows.Forms.TextBox txt_atenuacao;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Button btn_sair;
@@ -221,5 +221,6 @@ namespace BrewHome
         private System.Windows.Forms.Button btn_add_lev;
         private System.Windows.Forms.ListView lv_levedura;
         private System.Windows.Forms.Button btn_submeter;
+        private System.Windows.Forms.ComboBox comboBox_Flocula;
     }
 }

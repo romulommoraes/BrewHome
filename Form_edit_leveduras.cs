@@ -7,7 +7,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +21,8 @@ namespace BrewHome
         List<Levedura> leveduraLista = new();
         List<Levedura> leveduraSelecionados = new();
         string filepathRaiz = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+
+        Regex regnum = new Regex(@"^\d*\,?\d+$|^[,]{1}$|^\d*\,$");
         public Form_edit_leveduras()
         {
             InitializeComponent();
@@ -49,6 +53,11 @@ namespace BrewHome
             comboBox_tipo.Items.Add(TiposLeveduras.Lager);
             comboBox_tipo.Items.Add(TiposLeveduras.Kveik);
             comboBox_tipo.Items.Add(TiposLeveduras.Saison);
+
+            comboBox_Flocula.Items.Add("Alta");
+            comboBox_Flocula.Items.Add("Média");
+            comboBox_Flocula.Items.Add("Baixa");
+            comboBox_Flocula.Items.Add("?");
         }
 
         private void btn_add_lev_Click(object sender, EventArgs e)
@@ -56,7 +65,6 @@ namespace BrewHome
             txt_nome.Enabled = true;
             txt_atenuacao.Enabled = true;
             comboBox_tipo.Enabled = true;
-            txt_floculacao.Enabled = true;
             btn_submeter.Enabled = true;
         }
 
@@ -72,19 +80,8 @@ namespace BrewHome
                 lista.Add((TiposLeveduras)item);
             }
             comboBox_tipo.SelectedItem = lista.Find(c => c.ToString() == selected);
-            
-            // NORMAL
-            
-            //foreach (var item in comboBox_tipo.Items)
-            //{
-            //    if (selected == item.ToString())
-            //    {
-            //        comboBox_tipo.SelectedItem = item;
-            //        break;
-            //    }
-            //}
+            comboBox_Flocula.Enabled = true;
             txt_atenuacao.Enabled = true;
-            txt_floculacao.Enabled = true;
         }
 
         private void btn_del_lev_Click(object sender, EventArgs e)
@@ -128,7 +125,7 @@ namespace BrewHome
 
         private void btn_submeter_Click(object sender, EventArgs e)
         {
-            Levedura submit = new(txt_nome.Text, comboBox_tipo.SelectedItem.ToString(), double.Parse(txt_atenuacao.Text), txt_floculacao.Text);
+            Levedura submit = new(txt_nome.Text, comboBox_tipo.SelectedItem.ToString(), double.Parse(txt_atenuacao.Text), comboBox_Flocula.SelectedItem.ToString());
 
             leveduraSelecionados.AddRange(leveduraLista);
             bool found = false;
@@ -150,7 +147,6 @@ namespace BrewHome
             {
                 MessageBox.Show("Submissão realizada com sucesso");
                 reload();
-
             }
         }
 
@@ -170,8 +166,9 @@ namespace BrewHome
             txt_nome.Enabled = false;
             txt_atenuacao.Enabled = false;
             comboBox_tipo.Enabled = false;
-            txt_floculacao.Enabled = false;
+
             btn_submeter.Enabled = false;
+            comboBox_Flocula.Enabled = false;
 
             lv_levedura.Items.Clear();
             leveduraLista.Clear();
@@ -186,45 +183,39 @@ namespace BrewHome
 
         private void txt_atenuacao_TextChanged(object sender, EventArgs e)
         {
-            if (!txt_atenuacao.Text.Contains(".") && !txt_atenuacao.Text.Contains("-"))
-            {
-                double teste = 0;
-                bool parseSucessoAten = double.TryParse(txt_atenuacao.Text, out teste);
-                bool parseSucessoFloc = double.TryParse(txt_floculacao.Text, out teste);
-
-                txt_atenuacao.ForeColor = (txt_atenuacao.Text == "") ? Color.Red : Color.Black;
-                txt_floculacao.ForeColor = (txt_floculacao.Text == "") ? Color.Red : Color.Black;
-                txt_atenuacao.ForeColor = (!parseSucessoAten) ? Color.Red : Color.Black;
-                txt_floculacao.ForeColor = (!parseSucessoFloc) ? Color.Red : Color.Black;
-                btn_submeter.Enabled = (txt_atenuacao.ForeColor == Color.Red || txt_floculacao.ForeColor == Color.Red) ? false : true;
-            }
-            else
-            {
-                btn_submeter.Enabled = false;
-                txt_atenuacao.ForeColor = Color.Red;
-            }
-
+            TextBox textbox = sender as TextBox;
+            btn_submeter.Enabled = (validarTxtBox(textbox, regnum) && comboBox_Flocula.Text != "") ? true : false;   
         }
 
-        private void txt_floculacao_TextChanged(object sender, EventArgs e)
+        private void comboBox_Flocula_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!txt_floculacao.Text.Contains(".") && !txt_floculacao.Text.Contains("-"))
-            {
-                double teste = 0;
-                bool parseSucessoAten = double.TryParse(txt_atenuacao.Text, out teste);
-                bool parseSucessoFloc = double.TryParse(txt_floculacao.Text, out teste);
+            TextBox textbox = sender as TextBox;
+            btn_submeter.Enabled = (validarTxtBox(txt_atenuacao, regnum) && comboBox_Flocula.Text != "") ? true : false;
+        }
 
-                txt_atenuacao.ForeColor = (txt_atenuacao.Text == "") ? Color.Red : Color.Black;
-                txt_floculacao.ForeColor = (txt_floculacao.Text == "") ? Color.Red : Color.Black;
-                txt_atenuacao.ForeColor = (!parseSucessoAten) ? Color.Red : Color.Black;
-                txt_floculacao.ForeColor = (!parseSucessoFloc) ? Color.Red : Color.Black;
-                btn_submeter.Enabled = (txt_atenuacao.ForeColor == Color.Red || txt_floculacao.ForeColor == Color.Red) ? false : true;
+
+        private bool validarTxtBox(TextBox txtbox, Regex regex)
+        {
+            if (regex.IsMatch(txtbox.Text))
+            {
+                return true;
             }
             else
             {
-                btn_submeter.Enabled = false;
-                txt_floculacao.ForeColor = Color.Red;
+
+                if (txtbox.Text.Length > 1)
+                {
+                    SystemSounds.Beep.Play();
+                    txtbox.Text = txtbox.Text.Remove(txtbox.Text.Length - 1);
+                }
+                else
+                {
+                    txtbox.Text = "";
+                }
+                return false;
             }
         }
+
+
     }
 }

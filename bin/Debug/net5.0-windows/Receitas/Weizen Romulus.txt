@@ -4,49 +4,49 @@
  *******************************************************
  
 
- Receita: Cremosa2 
- Estilo: Cream Ale
+ Receita: Weizen Romulus 
+ Estilo: Weissbier
  
  Volume: 10(L) 
- OG: 1047
- FG: 1009
- ABV: 5
- SRM: 3,2
- EBC: 6,4
- IBU: 15,7
+ OG: 1046
+ FG: 1014
+ ABV: 4,2
+ SRM: 3,5
+ EBC: 7
+ IBU: 13,1
  
  Fermentáveis:
- Pilsen: 2(KG)
- CaraFoam: 0,1(KG)
- Trigo (White Wheat): 0,1(KG)
+ Pilsen: 1(KG)
+ Munich Malt: 0,1(KG)
+ Trigo(German Wheat): 1(KG)
  
  Lúpulos:
  Magnum: 5(g)
  
  Levedura:
- Safale US-05
+ Safale 33
  
  Mosturacao: 60(Min) 
  Rampas:
  Temperatura: 50°C: 10 Min 
  Temperatura: 65°C: 50 Min 
  
- Comentários: aqwaq 
+ Comentários:  
 
  Fervura: 60(Min)
- Comentários: aqqqqqe 
+ Comentários:  
 
- Tempo de Fermentação: 11(Dias)
- Temperatura de Fermentação: 12°C
+ Tempo de Fermentação: 7(Dias)
+ Temperatura de Fermentação: 14°C
 
  Tempo de Maturação: 4(Dias)
  Temperatura de Maturação:4°C
 
  DryHopping: -
 
- Comentários: qqqesqaqe
+ Comentários: 
  
 
  *******************************************************
- ***************** 16/01/2022 17:00:05 *****************
+ ***************** 17/01/2022 23:59:37 *****************
  *******************************************************

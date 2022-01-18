@@ -7,7 +7,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,6 +23,9 @@ namespace BrewHome
         List<Fermentavel> fermentaveisLista = new();
         List<Fermentavel> fermentaveisSelecionados = new();
         string filepathRaiz = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+
+        Regex regnum = new Regex(@"^\d*\,?\d+$|^[,]{1}$|^\d*\,$");
+
         public Form_edit_ferm()
         {
             InitializeComponent();
@@ -146,7 +151,6 @@ namespace BrewHome
             {
                 MessageBox.Show("Submissão realizada com sucesso");
                 reload();
-
             }
         }
 
@@ -183,43 +187,34 @@ namespace BrewHome
 
         private void txt_EBC_TextChanged(object sender, EventArgs e)
         {
-            if (!txt_EBC.Text.Contains(".") && !txt_EBC.Text.Contains("-"))
-            {
-                double teste = 0;
-                bool parseSucessoEBC = double.TryParse(txt_EBC.Text, out teste);
-                bool parseSucessoExtrato = double.TryParse(txt_extrato.Text, out teste);
-
-                txt_EBC.ForeColor = (txt_EBC.Text == "") ? Color.Red : Color.Black;
-                txt_extrato.ForeColor = (txt_extrato.Text == "") ? Color.Red : Color.Black;
-                txt_EBC.ForeColor = (!parseSucessoEBC) ? Color.Red : Color.Black;
-                txt_extrato.ForeColor = (!parseSucessoExtrato) ? Color.Red : Color.Black;
-                btn_submeter.Enabled = (txt_EBC.ForeColor == Color.Red || txt_extrato.ForeColor == Color.Red) ? false : true;
-            }
-            else
-            {
-                btn_submeter.Enabled = false;
-                txt_EBC.ForeColor = Color.Red;
-            }
+            TextBox textbox = sender as TextBox;
+            btn_submeter.Enabled = (validarTxtBox(textbox, regnum) && validarTxtBox(txt_extrato, regnum)) ? true : false;
         }
 
         private void txt_extrato_TextChanged(object sender, EventArgs e)
         {
-            if (!txt_extrato.Text.Contains(".") && !txt_extrato.Text.Contains("-"))
+            TextBox textbox = sender as TextBox;
+            btn_submeter.Enabled = (validarTxtBox(textbox, regnum) && validarTxtBox(txt_EBC, regnum)) ? true : false;
+        }
+        private bool validarTxtBox(TextBox txtbox, Regex regex)
+        {
+            if (regex.IsMatch(txtbox.Text))
             {
-                double teste = 0;
-                bool parseSucessoEBC = double.TryParse(txt_EBC.Text, out teste);
-                bool parseSucessoExtrato = double.TryParse(txt_extrato.Text, out teste);
-
-                txt_EBC.ForeColor = (txt_EBC.Text == "") ? Color.Red : Color.Black;
-                txt_extrato.ForeColor = (txt_extrato.Text == "") ? Color.Red : Color.Black;
-                txt_EBC.ForeColor = (!parseSucessoEBC) ? Color.Red : Color.Black;
-                txt_extrato.ForeColor = (!parseSucessoExtrato) ? Color.Red : Color.Black;
-                btn_submeter.Enabled = (txt_EBC.ForeColor == Color.Red || txt_extrato.ForeColor == Color.Red) ? false : true;
+                return true;
             }
             else
             {
-                btn_submeter.Enabled = false;
-                txt_extrato.ForeColor = Color.Red;
+
+                if (txtbox.Text.Length > 1)
+                {
+                    SystemSounds.Beep.Play();
+                    txtbox.Text = txtbox.Text.Remove(txtbox.Text.Length - 1);
+                }
+                else
+                {
+                    txtbox.Text = "";
+                }
+                return false;
             }
         }
     }

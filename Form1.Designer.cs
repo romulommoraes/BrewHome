@@ -163,9 +163,9 @@ namespace BrewHome
             // 
             // txt_PesoKG
             // 
-            this.txt_PesoKG.Location = new System.Drawing.Point(398, 260);
+            this.txt_PesoKG.Location = new System.Drawing.Point(261, 261);
             this.txt_PesoKG.Name = "txt_PesoKG";
-            this.txt_PesoKG.Size = new System.Drawing.Size(67, 23);
+            this.txt_PesoKG.Size = new System.Drawing.Size(57, 23);
             this.txt_PesoKG.TabIndex = 3;
             this.txt_PesoKG.Text = "0";
             this.txt_PesoKG.TextChanged += new System.EventHandler(this.txt_PesoKG_TextChanged);
@@ -223,11 +223,11 @@ namespace BrewHome
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(398, 242);
+            this.label4.Location = new System.Drawing.Point(260, 243);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 9;
-            this.label4.Text = "PesoKG";
+            this.label4.Text = "Peso(KG)";
             // 
             // lv_fermentaveis
             // 
@@ -251,9 +251,9 @@ namespace BrewHome
             // 
             // btn_addFerm
             // 
-            this.btn_addFerm.Location = new System.Drawing.Point(261, 245);
+            this.btn_addFerm.Location = new System.Drawing.Point(324, 244);
             this.btn_addFerm.Name = "btn_addFerm";
-            this.btn_addFerm.Size = new System.Drawing.Size(131, 39);
+            this.btn_addFerm.Size = new System.Drawing.Size(143, 40);
             this.btn_addFerm.TabIndex = 12;
             this.btn_addFerm.Text = "Add  Fermentavel";
             this.btn_addFerm.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@ namespace BrewHome
             // 
             // btn_rmvFermento
             // 
-            this.btn_rmvFermento.Location = new System.Drawing.Point(485, 245);
+            this.btn_rmvFermento.Location = new System.Drawing.Point(473, 244);
             this.btn_rmvFermento.Name = "btn_rmvFermento";
-            this.btn_rmvFermento.Size = new System.Drawing.Size(131, 38);
+            this.btn_rmvFermento.Size = new System.Drawing.Size(143, 40);
             this.btn_rmvFermento.TabIndex = 13;
             this.btn_rmvFermento.Text = "Remover Fermentavel";
             this.btn_rmvFermento.UseVisualStyleBackColor = true;
@@ -291,7 +291,7 @@ namespace BrewHome
             // 
             // add_lupulo
             // 
-            this.add_lupulo.Location = new System.Drawing.Point(632, 246);
+            this.add_lupulo.Location = new System.Drawing.Point(777, 245);
             this.add_lupulo.Name = "add_lupulo";
             this.add_lupulo.Size = new System.Drawing.Size(102, 38);
             this.add_lupulo.TabIndex = 16;
@@ -301,9 +301,9 @@ namespace BrewHome
             // 
             // txt_peso_g
             // 
-            this.txt_peso_g.Location = new System.Drawing.Point(812, 261);
+            this.txt_peso_g.Location = new System.Drawing.Point(706, 260);
             this.txt_peso_g.Name = "txt_peso_g";
-            this.txt_peso_g.Size = new System.Drawing.Size(67, 23);
+            this.txt_peso_g.Size = new System.Drawing.Size(65, 23);
             this.txt_peso_g.TabIndex = 17;
             this.txt_peso_g.Text = "0";
             this.txt_peso_g.TextChanged += new System.EventHandler(this.txt_peso_g_TextChanged);
@@ -311,15 +311,15 @@ namespace BrewHome
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(813, 243);
+            this.label5.Location = new System.Drawing.Point(706, 242);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 15);
+            this.label5.Size = new System.Drawing.Size(50, 15);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Peso g";
+            this.label5.Text = "Peso (g)";
             // 
             // btn_removerLup
             // 
-            this.btn_removerLup.Location = new System.Drawing.Point(885, 246);
+            this.btn_removerLup.Location = new System.Drawing.Point(885, 245);
             this.btn_removerLup.Name = "btn_removerLup";
             this.btn_removerLup.Size = new System.Drawing.Size(102, 38);
             this.btn_removerLup.TabIndex = 19;
@@ -329,9 +329,9 @@ namespace BrewHome
             // 
             // txt_tempo_fervura
             // 
-            this.txt_tempo_fervura.Location = new System.Drawing.Point(740, 261);
+            this.txt_tempo_fervura.Location = new System.Drawing.Point(632, 260);
             this.txt_tempo_fervura.Name = "txt_tempo_fervura";
-            this.txt_tempo_fervura.Size = new System.Drawing.Size(67, 23);
+            this.txt_tempo_fervura.Size = new System.Drawing.Size(65, 23);
             this.txt_tempo_fervura.TabIndex = 20;
             this.txt_tempo_fervura.Text = "0";
             this.txt_tempo_fervura.TextChanged += new System.EventHandler(this.txt_tempo_fervura_TextChanged);
@@ -339,11 +339,11 @@ namespace BrewHome
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(740, 243);
+            this.label6.Location = new System.Drawing.Point(630, 242);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 15);
+            this.label6.Size = new System.Drawing.Size(75, 15);
             this.label6.TabIndex = 21;
-            this.label6.Text = "Fervura";
+            this.label6.Text = "Fervura(min)";
             // 
             // label7
             // 
@@ -1222,6 +1222,8 @@ namespace BrewHome
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_PesoKG);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.group_mosturacao);
@@ -1246,9 +1248,7 @@ namespace BrewHome
             this.Controls.Add(this.btn_addFerm);
             this.Controls.Add(this.lv_selecionados);
             this.Controls.Add(this.lv_fermentaveis);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_PesoKG);
             this.Controls.Add(this.txt_Nome);
             this.Controls.Add(this.groupSpecs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
