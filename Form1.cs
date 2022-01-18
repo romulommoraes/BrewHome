@@ -655,11 +655,11 @@ namespace BrewHome
 
                     foreach (var item in fermentaveisMosto)
                     {
-                        item.PesoKG = Math.Round(razaoEscala * item.PesoKG, 1);
+                        item.PesoKG = Math.Round(razaoEscala * item.PesoKG, 3);
                     }
                     foreach (var item in lupuloMosto)
                     {
-                        item.PesoG = Math.Round(razaoEscala * item.PesoG, 1);
+                        item.PesoG = Math.Round(razaoEscala * item.PesoG, 3);
                     }
 
                     receita.SetVolume(volumeNovo);
@@ -674,6 +674,7 @@ namespace BrewHome
                     CalcProp();
                 }
             }
+            CalcProp();
         }
 
 

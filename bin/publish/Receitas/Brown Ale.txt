@@ -1,0 +1,53 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Brown Ale 
+ Estilo: American Brown Ale
+ 
+ Volume: 10(L) 
+ OG: 1057
+ FG: 1013
+ ABV: 5,8
+ SRM: 18,4
+ EBC: 36,8
+ IBU: 25,8
+ 
+ Fermentáveis:
+ Açucar Mascavo(escuro): 0,1(KG)
+ CaraFoam: 0,1(KG)
+ Maris Otter: 0,5(KG)
+ Pale Ale: 1(KG)
+ Special Roast: 1(KG)
+ 
+ Lúpulos:
+ Brewers Gold: 15(g)
+ 
+ Levedura:
+ Lallemand WINDSOR
+ 
+ Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 68°C: 60 Min 
+ 
+ Comentários:  
+
+ Fervura: 60(Min)
+ Comentários:  
+
+ Tempo de Fermentação: 7(Dias)
+ Temperatura de Fermentação: 14°C
+
+ Tempo de Maturação: 4(Dias)
+ Temperatura de Maturação:10°C
+
+ DryHopping: -
+
+ Comentários: 
+ 
+
+ *******************************************************
+ ***************** 17/01/2022 23:55:52 *****************
+ *******************************************************
