@@ -20,5 +20,12 @@ namespace BrewHome.Classes.Insumos
         public string Tipo { get; set; } //fazer enum  {lager, ale, kveik}
         public double Atenuacao { get; set; } 
         public string Floculacao { get; set; } //fazer enum  {baixa, media, alta}
+
+        public string ToTxt()
+        {
+            return $"{Nome};{Tipo};{Atenuacao};{Floculacao}";
+        }
     }
+
+
 }

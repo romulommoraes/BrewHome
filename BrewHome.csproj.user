@@ -10,6 +10,9 @@
     <Compile Update="Form_edit_ferm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form_edit_leveduras.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form_edit_lupulo.cs">
       <SubType>Form</SubType>
     </Compile>

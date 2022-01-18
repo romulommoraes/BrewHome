@@ -101,6 +101,7 @@ namespace BrewHome
             this.levedurasToolStripMenuItem.Name = "levedurasToolStripMenuItem";
             this.levedurasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.levedurasToolStripMenuItem.Text = "Leveduras";
+            this.levedurasToolStripMenuItem.Click += new System.EventHandler(this.levedurasToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 

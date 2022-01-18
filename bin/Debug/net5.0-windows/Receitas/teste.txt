@@ -4,48 +4,47 @@
  *******************************************************
  
 
- Receita: Bohemia Romulus 
- Estilo: Bohemian Pilsner
+ Receita: teste 
+ Estilo: Estilo Livre
  
  Volume: 10(L) 
- OG: 1051
- FG: 1013
- ABV: 5
- SRM: 4,3
- EBC: 8,6
- IBU: 37,4
+ OG: 1027
+ FG: 1004
+ ABV: 3
+ SRM: 3
+ EBC: 6
+ IBU: 7,2
  
  Fermentáveis:
- Pilsen: 2(KG)
- CaraFoam: 0,1(KG)
- Munich Malt: 0,3(KG)
+ Açucar Mascavo(claro): 1(KG)
  
  Lúpulos:
- Magnum: 12(g)
+ Cascade: 11(g)
  
  Levedura:
- M.Jack M84
+ Lallemand Verdant Ipa
  
  Mosturacao: 60(Min) 
  Rampas:
  Temperatura: 68°C: 60 Min 
+ Temperatura: 68°C: 50 Min 
  
- Comentários:  
+ Comentários: aaa 
 
  Fervura: 60(Min)
- Comentários:  
+ Comentários: aaa 
 
- Tempo de Fermentação: 0(Dias)
- Temperatura de Fermentação: 0°C
+ Tempo de Fermentação: 11(Dias)
+ Temperatura de Fermentação: 11°C
 
- Tempo de Maturação: 0(Dias)
- Temperatura de Maturação:0°C
+ Tempo de Maturação: 2(Dias)
+ Temperatura de Maturação:1°C
 
  DryHopping: -
 
- Comentários: 
+ Comentários: aaa
  
 
  *******************************************************
- ***************** 17/01/2022 19:19:54 *****************
+ ***************** 17/01/2022 19:18:51 *****************
  *******************************************************

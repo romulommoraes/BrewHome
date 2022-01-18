@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace BrewHome.Classes.Services
 {
+
+
     public static class HandleTxt
     {
         public static List<Fermentavel> loadFermentaveis(string filepathRaiz)
@@ -192,9 +194,63 @@ namespace BrewHome.Classes.Services
             //MessageBox.Show("Receita salva com sucesso");
         }
 
+        public static bool UpdateFermentaveis(List<Fermentavel> lista, string filepathRaiz)
+        {
+            try
+            {
+                List<string> outputTxt = new List<string>();
+                foreach (var item in lista)
+                {
+                    outputTxt.Add(item.ToTxt());
+                }
 
+                string fileFerm = @$"{filepathRaiz}\Dados\Fermentaveis.txt";
+                File.WriteAllLines(fileFerm, outputTxt);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }           
+        }
 
+        public static bool UpdateLupulos(List<Lupulo> lista, string filepathRaiz)
+        {
+            try
+            {
+                List<string> outputTxt = new List<string>();
+                foreach (var item in lista)
+                {
+                    outputTxt.Add(item.ToTxt());
+                }
 
+                string fileFerm = @$"{filepathRaiz}\Dados\Lupulo.txt";
+                File.WriteAllLines(fileFerm, outputTxt);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public static bool UpdateLeveduras(List<Levedura> lista, string filepathRaiz)
+        {
+            try
+            {
+                List<string> outputTxt = new List<string>();
+                foreach (var item in lista)
+                {
+                    outputTxt.Add(item.ToTxt());
+                }
 
+                string fileFerm = @$"{filepathRaiz}\Dados\Leveduras.txt";
+                File.WriteAllLines(fileFerm, outputTxt);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace BrewHome.Classes.Insumos
         {
             Pontos = (AlfaAcido /100) * (PesoG * 1000) * utilizacao;
         }
+        public string ToTxt()
+        {
+            return $"{Nome};{Tipo};{AlfaAcido}";
+        }
+
     }
 }

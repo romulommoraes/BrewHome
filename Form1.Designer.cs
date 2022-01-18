@@ -64,7 +64,8 @@ namespace BrewHome
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_fg = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupSpecs = new System.Windows.Forms.GroupBox();
+            this.reset_form = new System.Windows.Forms.Button();
             this.checkBox_escala = new System.Windows.Forms.CheckBox();
             this.btn_load_receita = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -93,7 +94,7 @@ namespace BrewHome
             this.lbl_ebcrange = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.group_mosturacao = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
             this.richText_com_mostura = new System.Windows.Forms.RichTextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -133,11 +134,11 @@ namespace BrewHome
             this.label21 = new System.Windows.Forms.Label();
             this.Txt_TempoFermentacao = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupSpecs.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.group_mosturacao.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -153,7 +154,7 @@ namespace BrewHome
             // 
             // txtVolume
             // 
-            this.txtVolume.Location = new System.Drawing.Point(5, 74);
+            this.txtVolume.Location = new System.Drawing.Point(5, 71);
             this.txtVolume.Name = "txtVolume";
             this.txtVolume.Size = new System.Drawing.Size(108, 22);
             this.txtVolume.TabIndex = 1;
@@ -183,7 +184,7 @@ namespace BrewHome
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Location = new System.Drawing.Point(6, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 5;
@@ -330,7 +331,6 @@ namespace BrewHome
             // 
             this.txt_tempo_fervura.Location = new System.Drawing.Point(740, 261);
             this.txt_tempo_fervura.Name = "txt_tempo_fervura";
-            this.txt_tempo_fervura.PlaceholderText = "Tempo(Min)";
             this.txt_tempo_fervura.Size = new System.Drawing.Size(67, 23);
             this.txt_tempo_fervura.TabIndex = 20;
             this.txt_tempo_fervura.Text = "0";
@@ -489,22 +489,33 @@ namespace BrewHome
             this.label10.TabIndex = 28;
             this.label10.Text = "FG:";
             // 
-            // groupBox2
+            // groupSpecs
             // 
-            this.groupBox2.Controls.Add(this.checkBox_escala);
-            this.groupBox2.Controls.Add(this.btn_load_receita);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.txt_eficiencia);
-            this.groupBox2.Controls.Add(this.txtVolume);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.btn_CalcOG);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(10, 87);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(234, 130);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Especificações";
+            this.groupSpecs.Controls.Add(this.reset_form);
+            this.groupSpecs.Controls.Add(this.checkBox_escala);
+            this.groupSpecs.Controls.Add(this.btn_load_receita);
+            this.groupSpecs.Controls.Add(this.label20);
+            this.groupSpecs.Controls.Add(this.txt_eficiencia);
+            this.groupSpecs.Controls.Add(this.txtVolume);
+            this.groupSpecs.Controls.Add(this.label2);
+            this.groupSpecs.Controls.Add(this.btn_CalcOG);
+            this.groupSpecs.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupSpecs.Location = new System.Drawing.Point(10, 87);
+            this.groupSpecs.Name = "groupSpecs";
+            this.groupSpecs.Size = new System.Drawing.Size(234, 130);
+            this.groupSpecs.TabIndex = 30;
+            this.groupSpecs.TabStop = false;
+            this.groupSpecs.Text = "Especificações";
+            // 
+            // reset_form
+            // 
+            this.reset_form.Location = new System.Drawing.Point(118, 99);
+            this.reset_form.Name = "reset_form";
+            this.reset_form.Size = new System.Drawing.Size(108, 23);
+            this.reset_form.TabIndex = 41;
+            this.reset_form.Text = "Resetar";
+            this.reset_form.UseVisualStyleBackColor = true;
+            this.reset_form.Click += new System.EventHandler(this.reset_form_Click);
             // 
             // checkBox_escala
             // 
@@ -530,7 +541,7 @@ namespace BrewHome
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(120, 58);
+            this.label20.Location = new System.Drawing.Point(120, 55);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(73, 13);
             this.label20.TabIndex = 39;
@@ -538,7 +549,7 @@ namespace BrewHome
             // 
             // txt_eficiencia
             // 
-            this.txt_eficiencia.Location = new System.Drawing.Point(121, 74);
+            this.txt_eficiencia.Location = new System.Drawing.Point(121, 71);
             this.txt_eficiencia.Name = "txt_eficiencia";
             this.txt_eficiencia.Size = new System.Drawing.Size(105, 22);
             this.txt_eficiencia.TabIndex = 38;
@@ -552,6 +563,7 @@ namespace BrewHome
             this.txt_FervuraMosto.Size = new System.Drawing.Size(26, 23);
             this.txt_FervuraMosto.TabIndex = 36;
             this.txt_FervuraMosto.Text = "60";
+            this.txt_FervuraMosto.TextChanged += new System.EventHandler(this.txt_FervuraMosto_TextChanged);
             // 
             // txt_TempoMostura
             // 
@@ -793,19 +805,19 @@ namespace BrewHome
             this.trackBar1.TabIndex = 38;
             this.trackBar1.TickFrequency = 10;
             // 
-            // groupBox4
+            // group_mosturacao
             // 
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.richText_com_mostura);
-            this.groupBox4.Controls.Add(this.groupBox7);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.txt_TempoMostura);
-            this.groupBox4.Location = new System.Drawing.Point(261, 469);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(355, 239);
-            this.groupBox4.TabIndex = 39;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Mosturação";
+            this.group_mosturacao.Controls.Add(this.label30);
+            this.group_mosturacao.Controls.Add(this.richText_com_mostura);
+            this.group_mosturacao.Controls.Add(this.groupBox7);
+            this.group_mosturacao.Controls.Add(this.label13);
+            this.group_mosturacao.Controls.Add(this.txt_TempoMostura);
+            this.group_mosturacao.Location = new System.Drawing.Point(261, 469);
+            this.group_mosturacao.Name = "group_mosturacao";
+            this.group_mosturacao.Size = new System.Drawing.Size(355, 239);
+            this.group_mosturacao.TabIndex = 39;
+            this.group_mosturacao.TabStop = false;
+            this.group_mosturacao.Text = "Mosturação";
             // 
             // label30
             // 
@@ -864,6 +876,7 @@ namespace BrewHome
             this.txt_rampa_tempT1.Size = new System.Drawing.Size(37, 23);
             this.txt_rampa_tempT1.TabIndex = 45;
             this.txt_rampa_tempT1.Text = "68";
+            this.txt_rampa_tempT1.TextChanged += new System.EventHandler(this.txt_rampa_tempT1_TextChanged);
             // 
             // txt_rampa_tempT3
             // 
@@ -872,6 +885,7 @@ namespace BrewHome
             this.txt_rampa_tempT3.Name = "txt_rampa_tempT3";
             this.txt_rampa_tempT3.Size = new System.Drawing.Size(37, 23);
             this.txt_rampa_tempT3.TabIndex = 47;
+            this.txt_rampa_tempT3.TextChanged += new System.EventHandler(this.txt_rampa_tempT3_TextChanged);
             // 
             // label28
             // 
@@ -899,6 +913,7 @@ namespace BrewHome
             this.txt_rampa_tempT4.Name = "txt_rampa_tempT4";
             this.txt_rampa_tempT4.Size = new System.Drawing.Size(37, 23);
             this.txt_rampa_tempT4.TabIndex = 48;
+            this.txt_rampa_tempT4.TextChanged += new System.EventHandler(this.txt_rampa_tempT4_TextChanged);
             // 
             // label27
             // 
@@ -917,6 +932,7 @@ namespace BrewHome
             this.txt_rampa_tempT2.Name = "txt_rampa_tempT2";
             this.txt_rampa_tempT2.Size = new System.Drawing.Size(37, 23);
             this.txt_rampa_tempT2.TabIndex = 46;
+            this.txt_rampa_tempT2.TextChanged += new System.EventHandler(this.txt_rampa_tempT2_TextChanged);
             // 
             // checkBox_Rampa_T4
             // 
@@ -1105,6 +1121,7 @@ namespace BrewHome
             this.textBox_DH_peso.Name = "textBox_DH_peso";
             this.textBox_DH_peso.Size = new System.Drawing.Size(40, 23);
             this.textBox_DH_peso.TabIndex = 48;
+            this.textBox_DH_peso.TextChanged += new System.EventHandler(this.textBox_DH_peso_TextChanged);
             // 
             // comboBox_dryhopping
             // 
@@ -1140,6 +1157,7 @@ namespace BrewHome
             this.txt_matura_temp.Size = new System.Drawing.Size(26, 23);
             this.txt_matura_temp.TabIndex = 44;
             this.txt_matura_temp.Text = "0";
+            this.txt_matura_temp.TextChanged += new System.EventHandler(this.txt_matura_temp_TextChanged);
             // 
             // label25
             // 
@@ -1158,6 +1176,7 @@ namespace BrewHome
             this.txt_tempo_maturacao.Size = new System.Drawing.Size(26, 23);
             this.txt_tempo_maturacao.TabIndex = 42;
             this.txt_tempo_maturacao.Text = "2";
+            this.txt_tempo_maturacao.TextChanged += new System.EventHandler(this.txt_tempo_maturacao_TextChanged);
             // 
             // lbl_temp_ferm
             // 
@@ -1176,6 +1195,7 @@ namespace BrewHome
             this.txt_temp_ferm.Size = new System.Drawing.Size(26, 23);
             this.txt_temp_ferm.TabIndex = 40;
             this.txt_temp_ferm.Text = "18";
+            this.txt_temp_ferm.TextChanged += new System.EventHandler(this.txt_temp_ferm_TextChanged);
             // 
             // label21
             // 
@@ -1194,6 +1214,7 @@ namespace BrewHome
             this.Txt_TempoFermentacao.Size = new System.Drawing.Size(26, 23);
             this.Txt_TempoFermentacao.TabIndex = 38;
             this.Txt_TempoFermentacao.Text = "7";
+            this.Txt_TempoFermentacao.TextChanged += new System.EventHandler(this.Txt_TempoFermentacao_TextChanged);
             // 
             // Form_receitas
             // 
@@ -1203,7 +1224,7 @@ namespace BrewHome
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.group_mosturacao);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
@@ -1229,7 +1250,7 @@ namespace BrewHome
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_PesoKG);
             this.Controls.Add(this.txt_Nome);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupSpecs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_receitas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1238,14 +1259,14 @@ namespace BrewHome
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupSpecs.ResumeLayout(false);
+            this.groupSpecs.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.group_mosturacao.ResumeLayout(false);
+            this.group_mosturacao.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1284,7 +1305,7 @@ namespace BrewHome
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupSpecs;
         private System.Windows.Forms.ListView lv_levedura;
         private System.Windows.Forms.ListView lv_levedura_sl;
         private System.Windows.Forms.Button btn_add_lev;
@@ -1320,7 +1341,7 @@ namespace BrewHome
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txt_eficiencia;
         private System.Windows.Forms.CheckBox checkBox_escala;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox group_mosturacao;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RichTextBox richText_coment_ferm;
@@ -1361,6 +1382,7 @@ namespace BrewHome
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.CheckBox checkBox_dryhopping;
+        private System.Windows.Forms.Button reset_form;
     }
 }
 

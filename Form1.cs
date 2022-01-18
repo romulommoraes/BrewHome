@@ -12,6 +12,8 @@ using System.IO;
 using BrewHome.Classes.JSON;
 using BrewHome.Classes.Insumos;
 using BrewHome.Classes.Services;
+using System.Text.RegularExpressions;
+using System.Media;
 
 namespace BrewHome
 {
@@ -36,14 +38,21 @@ namespace BrewHome
 
         string FermentavelSelecionado = "";
         string LupuloSelecionado = "";
-        float eficiencia;
+        double eficiencia;
+
+        Regex regnum = new Regex(@"^\d*\,?\d+$|^[,]{1}$|^\d*\,$");
+        Regex regnum2 = new Regex("[A-Z]{1,30}$");
 
         Receita receita = new();
+
+        double R1;
+        double R2;
+        double R3;
+        double R4;
 
         public Form_receitas()
         {
             InitializeComponent();
-           
         }
 
         private void btn_CalcOG_Click(object sender, EventArgs e) //salvar receita (mudar isso)
@@ -56,9 +65,9 @@ namespace BrewHome
                     receita.SetNome(txt_Nome.Text);
                     //SALVA RAMPAS
                     List<double[]> rampas = new();
-                    double[] r1 = new double []{ double.Parse(txt_rampa_tempT1.Text), double.Parse(txt_rampa_min_T1.Text)  };
+                    double[] r1 = new double[] { double.Parse(txt_rampa_tempT1.Text), double.Parse(txt_rampa_min_T1.Text) };
                     rampas.Add(r1);
-                    if (txt_rampa_tempT2.Enabled) 
+                    if (txt_rampa_tempT2.Enabled)
                     {
                         double[] r2 = new double[] { double.Parse(txt_rampa_tempT2.Text), double.Parse(txt_rampa_min_T2.Text) };
                         rampas.Add(r2);
@@ -80,7 +89,7 @@ namespace BrewHome
                     receita.RampasMostura.AddRange(rampas);
 
 
-                    //REVER ESSA GAMBIARRA DO DEMONIO
+                    //REVER ESSA GAMBIARRA DO DEMONIO (CAMPOS N PODEM ESTAR VAZIOS)
                     try
                     {
                         //SALVA MATURAÇÃO
@@ -112,8 +121,15 @@ namespace BrewHome
                     receita.ComentariosFervura = richText_com_ferv.Text;
                     receita.ComentariosFermMat = richText_coment_ferm.Text;
 
-                    HandleJson.SaveJson(receita, double.Parse(txt_TempoMostura.Text), double.Parse(txt_FervuraMosto.Text));
-                    HandleTxt.ExportTXT(receita, double.Parse(txt_TempoMostura.Text), double.Parse(txt_FervuraMosto.Text));
+                    //(CAMPOS N PODEM ESTAR VAZIOS)
+
+                    //não é o ideal... coloca valores padrão... preciso ver como dar uma msg pra a pessoa preencher
+                    double mostura = (txt_TempoMostura.Text != "") ? double.Parse(txt_TempoMostura.Text) : 60;
+                    double fervura = (txt_FervuraMosto.Text != "") ? double.Parse(txt_FervuraMosto.Text) : 60;
+
+                    
+                    HandleJson.SaveJson(receita, mostura, fervura);
+                    HandleTxt.ExportTXT(receita, mostura, fervura);
                     receita.Lupulos.Clear();
                     receita.Fermentaveis.Clear();
                 }
@@ -130,7 +146,7 @@ namespace BrewHome
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             Receita receita = new();
             receita.SetVolume(10);
             lv_fermentaveis.Columns.Add("Nome", 160);
@@ -155,11 +171,11 @@ namespace BrewHome
             lv_selecionados.GridLines = true; //mostra linha de grades
             lv_selecionados.FullRowSelect = true; //seleciona toda a linha qdo clica
             lv_selecionados.Sorting = SortOrder.Ascending; //ordena a lista pela primeira coluna
-            
 
-            lv_lupulos.Columns.Add("Nome", lv_lupulos.Width/2);
+
+            lv_lupulos.Columns.Add("Nome", lv_lupulos.Width / 2);
             lv_lupulos.Columns.Add("Tipo", lv_lupulos.Width / 4);
-            lv_lupulos.Columns.Add("AlfaAcido", (lv_lupulos.Width / 4)-5);
+            lv_lupulos.Columns.Add("AlfaAcido", (lv_lupulos.Width / 4) - 5);
 
             lv_lupulos.View = View.Details;
             lv_lupulos.GridLines = true; //mostra linha de grades
@@ -223,12 +239,13 @@ namespace BrewHome
             }
 
             estilosLista.AddRange(HandleTxt.loadEstilo(filepathRaiz));
+            comboBox1.Items.Add("");
             foreach (var item in estilosLista)
             {
                 comboBox1.Items.Add(item.Nome);
             }
 
-            //estilosLista.AddRange(HandleTxt.loadEstilo(filepathRaiz));
+            comboBox_dryhopping.Items.Add("");
             foreach (var item in lupuloLista)
             {
                 comboBox_dryhopping.Items.Add(item.Nome);
@@ -246,7 +263,7 @@ namespace BrewHome
                 string selectedTipo = lv_fermentaveis.SelectedItems[0].SubItems[1].Text;
                 string selectedSRM = lv_fermentaveis.SelectedItems[0].SubItems[2].Text;
                 string selectedExtrato = lv_fermentaveis.SelectedItems[0].SubItems[3].Text;
-                
+
                 Fermentavel selected = new(selectedNome, selectedTipo, double.Parse(selectedSRM), double.Parse(selectedExtrato), double.Parse(txt_PesoKG.Text));
 
                 if (fermentaveisMosto.Count > 0)
@@ -287,8 +304,8 @@ namespace BrewHome
                 else
                 {
                     MessageBox.Show("Nenhum fermentavel selecionado");
-                }                        
-            }           
+                }
+            }
         }
 
 
@@ -297,11 +314,11 @@ namespace BrewHome
             double totalPeso = 0;
             if (fermentaveisMosto.Count > 0)
             {
-              
+
                 foreach (var item in fermentaveisMosto)
                 {
-                    totalPeso += item.PesoKG;   
-                    
+                    totalPeso += item.PesoKG;
+
                 }
                 return totalPeso;
             }
@@ -310,12 +327,12 @@ namespace BrewHome
 
         private void calcPesoPercentmaltes()
         {
-                double selectedPorcent;
-                foreach (var item in fermentaveisMosto)
-                {
-                    selectedPorcent = (item.PesoKG / calcTotalPesomaltes()) * 100;
-                    item.pesoPorcent = Math.Round(selectedPorcent, 1);
-                }
+            double selectedPorcent;
+            foreach (var item in fermentaveisMosto)
+            {
+                selectedPorcent = (item.PesoKG / calcTotalPesomaltes()) * 100;
+                item.pesoPorcent = Math.Round(selectedPorcent, 1);
+            }
         }
 
 
@@ -351,7 +368,7 @@ namespace BrewHome
             {
                 String[] itemLinha = new string[] { item.Nome, item.Tipo, item.EBC.ToString(), item.Extrato.ToString(), item.PesoKG.ToString(), item.pesoPorcent.ToString() };
                 lv_selecionados.Items.Add(new ListViewItem(itemLinha));//o list view item requer um array como parametro, no caso tem que criar ele pra poder adicionar ao list view
-                
+
                 receita.AddFermentaveis(item);
             }
             CalcProp();
@@ -375,12 +392,9 @@ namespace BrewHome
         private void Loadlv_lev_selecionados()
         {
             lv_levedura_sl.Items.Clear();
-            //receita.Levedura.Clear();
-
-
             foreach (var item in leveduraMosto)
             {
-                String[] itemLinha = new string[] { item.Nome, item.Tipo, item.Atenuacao.ToString(), item.Floculacao.ToString()};
+                String[] itemLinha = new string[] { item.Nome, item.Tipo, item.Atenuacao.ToString(), item.Floculacao.ToString() };
                 lv_levedura_sl.Items.Add(new ListViewItem(itemLinha));//o list view item requer um array como parametro, no caso tem que criar ele pra poder adicionar ao list view
                 receita.Levedura = item;
             }
@@ -399,8 +413,7 @@ namespace BrewHome
             }
             calcPesoPercentmaltes();
 
-            eficiencia = float.Parse(txt_eficiencia.Text)/100;            
-
+            eficiencia = (txt_eficiencia.Text != "") ? double.Parse(txt_eficiencia.Text) / 100 : 0;
             CalculadorPropriedades calc = new(receita);
             calc.CalcularPropriedades(eficiencia);
             calc.CalcularIBU();
@@ -414,10 +427,18 @@ namespace BrewHome
                 calc.CalcularABV();
                 lbl_abv.Text = calc.Receita.ABV.ToString();
                 lbl_fg.Text = calc.Receita.FG.ToString();
+                calc.CalcularCalorias();
+                lbl_kcal.Text = receita.Calorias.ToString();
             }
-            
-                lbl_srm.Text = receita.COR.ToString();
-                lbl_ebc.Text = Math.Round(receita.COR * 2, 1).ToString();
+            else
+            {
+                lbl_abv.Text = "0";
+                lbl_fg.Text = "0";
+                lbl_kcal.Text = "0";
+            }
+
+            lbl_srm.Text = receita.COR.ToString();
+            lbl_ebc.Text = Math.Round(receita.COR * 2, 1).ToString();
 
 
             if (receita.Estilo != null)
@@ -473,30 +494,41 @@ namespace BrewHome
                 {
                     lbl_iburange.ForeColor = Color.Green;
                 }
+            }
 
-
-                //calorias
-                calc.CalcularCalorias();
-                lbl_kcal.Text = receita.Calorias.ToString();
+            if (comboBox1.SelectedIndex == 0)
+            {
+                lbl_ogrange.Text = "0";
+                lbl_fgrange.Text = "0";
+                lbl_abvrange.Text = "0";
+                lbl_srmrange.Text = "0";
+                lbl_ebcrange.Text = "0";
+                lbl_iburange.Text = "0";
+                lbl_ogrange.ForeColor = Color.Black;
+                lbl_fgrange.ForeColor = Color.Black;
+                lbl_abvrange.ForeColor = Color.Black;
+                lbl_srmrange.ForeColor = Color.Black;
+                lbl_ebcrange.ForeColor = Color.Black;
+                lbl_iburange.ForeColor = Color.Black;
             }
 
 
-            if (txt_rampa_min_T2.Enabled !=true)
+            if (txt_rampa_min_T2.Enabled != true)
             {
                 txt_rampa_min_T1.Text = txt_TempoMostura.Text;
             }
 
-            double tb = Math.Round(receita.COR*10);
+            double tb = Math.Round(receita.COR * 10);
             //adaptação dos valores pro trackbar
-            if (tb > 400) {tb = 400;} //acima de 40 é tudo preto
-            
+            if (tb > 400) { tb = 400; } //acima de 40 é tudo preto
+
             //inverte os valores
             tb = tb - 400;
             if (tb < 0)
             {
                 tb *= -1;
             }
-            trackBar1.Value = (int)tb;        
+            trackBar1.Value = (int)tb;
 
         }
 
@@ -550,7 +582,7 @@ namespace BrewHome
                 else
                 {
                     MessageBox.Show("Nenhum Lupulo selecionado");
-                }                
+                }
             }
         }
 
@@ -568,7 +600,7 @@ namespace BrewHome
                     }
                 }
                 catch (Exception)
-                {                    
+                {
                     MessageBox.Show("nenhum item selecionado");
                 }
             }
@@ -578,7 +610,7 @@ namespace BrewHome
         {
             leveduraSelecionados.Clear();
             leveduraMosto.Clear();
-            
+
             string selectedNome = lv_levedura.SelectedItems[0].SubItems[0].Text;
             string selectedTipo = lv_levedura.SelectedItems[0].SubItems[1].Text;
             string selectedAtenuacao = lv_levedura.SelectedItems[0].SubItems[2].Text;
@@ -614,8 +646,8 @@ namespace BrewHome
         }
 
         private void txtVolume_TextChanged(object sender, EventArgs e)
-        {            
-            try
+        {
+            if (validarTxtBox(txtVolume, regnum))
             {
                 if (checkBox_escala.Checked)
                 {
@@ -644,22 +676,17 @@ namespace BrewHome
                     CalcProp();
                 }
             }
-            catch (Exception)
-            {
-                if (txtVolume.Text != "")
-                {
-                    MessageBox.Show("Volume inválido");
-                }                
-            }
         }
 
-        
+
         private void txt_PesoKG_TextChanged(object sender, EventArgs e)
         {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
             try
             {
                 if (receita.Fermentaveis.Count > 0)
-                {                    
+                {
                     foreach (var item in receita.Fermentaveis)
                     {
                         if (item.Nome.Equals(FermentavelSelecionado) && FermentavelSelecionado != "")
@@ -683,6 +710,8 @@ namespace BrewHome
         }
         private void txt_peso_g_TextChanged(object sender, EventArgs e)
         {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
             try
             {
                 if (receita.Lupulos.Count > 0)
@@ -711,6 +740,8 @@ namespace BrewHome
 
         private void txt_tempo_fervura_TextChanged(object sender, EventArgs e)
         {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
             try
             {
                 if (receita.Lupulos.Count > 0)
@@ -744,7 +775,7 @@ namespace BrewHome
             }
             catch (Exception)
             {
-                
+
 
             }
         }
@@ -766,14 +797,14 @@ namespace BrewHome
             foreach (var item in estilosLista)
             {
                 if (indice == item.Nome)
-                {                  
-                    lbl_ogrange.Text = $"{item.OGRange[0]}-{item.OGRange[1]}";                                      
-                    lbl_fgrange.Text = $"{item.FGRange[0]}-{item.FGRange[1]}";                                                          
-                    lbl_abvrange.Text = $"{item.ABVRange[0]}-{item.ABVRange[1]}";                                       
-                    lbl_srmrange.Text = $"{item.SRMRange[0]}-{item.SRMRange[1]}";                    
-                    lbl_ebcrange.Text = $"{item.SRMRange[0]*2}-{item.SRMRange[1] * 2}";                   
+                {
+                    lbl_ogrange.Text = $"{item.OGRange[0]}-{item.OGRange[1]}";
+                    lbl_fgrange.Text = $"{item.FGRange[0]}-{item.FGRange[1]}";
+                    lbl_abvrange.Text = $"{item.ABVRange[0]}-{item.ABVRange[1]}";
+                    lbl_srmrange.Text = $"{item.SRMRange[0]}-{item.SRMRange[1]}";
+                    lbl_ebcrange.Text = $"{item.SRMRange[0] * 2}-{item.SRMRange[1] * 2}";
                     lbl_iburange.Text = $"{item.IBURange[0]}-{item.IBURange[1]}";
-                    receita.Estilo = indice;                    
+                    receita.Estilo = indice;
                 }
             }
             CalcProp();
@@ -781,7 +812,7 @@ namespace BrewHome
 
         private void lv_fermentaveis_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FermentavelSelecionado = "";            
+            FermentavelSelecionado = "";
         }
 
         private void lv_lupulos_SelectedIndexChanged(object sender, EventArgs e)
@@ -826,9 +857,9 @@ namespace BrewHome
                         if (item.Nome == insumo.Nome)
                         {
                             Fermentavel insumoMosto = new(insumo.Nome, insumo.Tipo, insumo.EBC, insumo.Extrato, item.Peso);
-                            fermentaveisMosto.Add(insumoMosto);                            
+                            fermentaveisMosto.Add(insumoMosto);
                         }
-                    }                    
+                    }
                 }
                 calcPesoPercentmaltes();
                 receita.Fermentaveis.AddRange(fermentaveisMosto);
@@ -851,7 +882,7 @@ namespace BrewHome
                     if (levedura.Nome == receitaLoad.Levedura)
                     {
                         leveduraMosto.Add(levedura);
-                        receita.Levedura = levedura; 
+                        receita.Levedura = levedura;
                     }
                 }
 
@@ -864,7 +895,7 @@ namespace BrewHome
                         lbl_abvrange.Text = $"{item.ABVRange[0]}-{item.ABVRange[1]}";
                         lbl_srmrange.Text = $"{item.SRMRange[0]}-{item.SRMRange[1]}";
                         lbl_ebcrange.Text = $"{item.SRMRange[0] * 2}-{item.SRMRange[1] * 2}";
-                        lbl_iburange.Text = $"{item.IBURange[0]}-{item.IBURange[1]}";                        
+                        lbl_iburange.Text = $"{item.IBURange[0]}-{item.IBURange[1]}";
                         txt_Nome.Text = receita.Nome;
                         comboBox1.SelectedItem = item.Nome;
                     }
@@ -902,7 +933,7 @@ namespace BrewHome
                     }
                 }
 
-                txt_matura_temp.Text = (receita.Maturacao != null) ? receita.Maturacao[0].ToString() : "0" ;
+                txt_matura_temp.Text = (receita.Maturacao != null) ? receita.Maturacao[0].ToString() : "0";
                 txt_tempo_maturacao.Text = (receita.Maturacao != null) ? receita.Maturacao[1].ToString() : "0";
 
                 txt_temp_ferm.Text = (receita.Fermentacao != null) ? receita.Fermentacao[0].ToString() : "0";
@@ -922,21 +953,25 @@ namespace BrewHome
                 Loadlv_selecionados();
                 Loadlv_lp_selecionados();
                 Loadlv_lev_selecionados();
-            }       
-            
+            }
+
         }
 
         private void txt_eficiencia_TextChanged(object sender, EventArgs e)
         {
-            try
+            TextBox textbox = sender as TextBox;
+            if (validarTxtBox(textbox, regnum))
             {
-                eficiencia = float.Parse(txt_eficiencia.Text);
+                eficiencia = (txt_eficiencia.Text != "") ? double.Parse(txt_eficiencia.Text) / 100 : 0;
+                //txt_eficiencia.Text = eficiencia.ToString();
+                if (eficiencia >100)
+                {
+                    MessageBox.Show("eficiencia deve ser um valor entre 0 e 100");
+                    txt_eficiencia.Text = "100";
+                }
                 CalcProp();
             }
-            catch (Exception)
-            {
-                MessageBox.Show("eficiencia deve ser um valor entre 0 e 100");
-            }
+
         }
 
         private void txt_Nome_TextChanged(object sender, EventArgs e)
@@ -944,7 +979,7 @@ namespace BrewHome
             receita.Nome = txt_Nome.Text;
         }
 
-        
+        //FAZER UM METODO PRA ESSA VALIDAÇÃO
         private void checkBox_Rampa_T2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Rampa_T2.Checked)
@@ -1014,147 +1049,72 @@ namespace BrewHome
         }
         private void txt_rampa_min_T1_TextChanged(object sender, EventArgs e)
         {
-            double R1;          
-            double R2;
-            double R3;
-            double R4;
-            try { R1 = double.Parse(txt_rampa_min_T1.Text, 0); }
-            catch (Exception) { R1 = 0; }
-            try { R2 = txt_rampa_min_T2.Enabled ? double.Parse(txt_rampa_min_T2.Text) : 0; }
-            catch (Exception) { R2 = 0; }
-            try { R3 = txt_rampa_min_T3.Enabled ? double.Parse(txt_rampa_min_T3.Text) : 0; }
-            catch (Exception) { R3 = 0; }
-            try { R4 = txt_rampa_min_T4.Enabled ? double.Parse(txt_rampa_min_T4.Text) : 0; }
-            catch (Exception) { R4 = 0; }
+            
+            TextBox textbox = sender as TextBox;
 
+            if (validarTxtBox(textbox, regnum))
+            {
+                R1 = (txt_rampa_min_T1.Text != "") ? double.Parse(txt_rampa_min_T1.Text) : 0;
+                R2 = (txt_rampa_min_T2.Text != "") ? double.Parse(txt_rampa_min_T2.Text) : 0;
+                R3 = (txt_rampa_min_T3.Text != "") ? double.Parse(txt_rampa_min_T3.Text) : 0;
+                R4 = (txt_rampa_min_T4.Text != "") ? double.Parse(txt_rampa_min_T4.Text) : 0;
 
-            if (R1 + R2 + R3 + R4 > double.Parse(txt_TempoMostura.Text))
-            {
-                txt_rampa_min_T1.ForeColor = Color.Red;
-            }
-            else if (R1 + R2 + R3 + R4 < double.Parse(txt_TempoMostura.Text))
-            {
-                txt_rampa_min_T1.ForeColor = Color.Red;
-                txt_rampa_min_T2.ForeColor = Color.Red;
-                txt_rampa_min_T3.ForeColor = Color.Red;
-                txt_rampa_min_T4.ForeColor = Color.Red;
+                txt_rampa_min_T1.ForeColor = Color.Black;
+                validarRampas();
             }
             else
             {
-                txt_rampa_min_T1.ForeColor = Color.Black;
-                txt_rampa_min_T2.ForeColor = Color.Black;
-                txt_rampa_min_T3.ForeColor = Color.Black;
-                txt_rampa_min_T4.ForeColor = Color.Black;
+                txt_rampa_min_T1.ForeColor = Color.Red;
             }
         }
         private void txt_rampa_min_T2_TextChanged(object sender, EventArgs e)
         {
-            double R1;
-            double R2;
-            double R3;
-            double R4;
-            try { R1 = double.Parse(txt_rampa_min_T1.Text, 0); }
-            catch (Exception) { R1 = 0; }
-            try {R2 = txt_rampa_min_T2.Enabled ? double.Parse(txt_rampa_min_T2.Text) : 0;}
-            catch (Exception){R2 = 0;}
-            try {R3 = txt_rampa_min_T3.Enabled ? double.Parse(txt_rampa_min_T3.Text) : 0;}
-            catch (Exception) { R3 = 0;}
-            try {R4 = txt_rampa_min_T4.Enabled ? double.Parse(txt_rampa_min_T4.Text) : 0;}
-            catch (Exception) {R4 = 0;}
-
-
-            if (R1 + R2 + R3 + R4 != double.Parse(txt_TempoMostura.Text))
+            TextBox textbox = sender as TextBox;
+            if (validarTxtBox(textbox, regnum))
             {
-                txt_rampa_min_T1.ForeColor = Color.Red;
-                txt_rampa_min_T2.ForeColor = Color.Red;
-                txt_rampa_min_T3.ForeColor = Color.Red;
-                txt_rampa_min_T4.ForeColor = Color.Red;
-            }
-            else
-            {
-                txt_rampa_min_T1.ForeColor = Color.Black;
-                txt_rampa_min_T2.ForeColor = Color.Black;
-                txt_rampa_min_T3.ForeColor = Color.Black;
-                txt_rampa_min_T4.ForeColor = Color.Black;
+                validarRampas();
             }
         }
 
         private void txt_rampa_min_T3_TextChanged(object sender, EventArgs e)
         {
-            double R1;
-            double R2;
-            double R3;
-            double R4;
-            try { R1 = double.Parse(txt_rampa_min_T1.Text, 0); }
-            catch (Exception) { R1 = 0; }
-            try { R2 = txt_rampa_min_T2.Enabled ? double.Parse(txt_rampa_min_T2.Text) : 0; }
-            catch (Exception) { R2 = 0; }
-            try { R3 = txt_rampa_min_T3.Enabled ? double.Parse(txt_rampa_min_T3.Text) : 0; }
-            catch (Exception) { R3 = 0; }
-            try { R4 = txt_rampa_min_T4.Enabled ? double.Parse(txt_rampa_min_T4.Text) : 0; }
-            catch (Exception) { R4 = 0; }
-
-
-            if (R1 + R2 + R3 + R4 != double.Parse(txt_TempoMostura.Text))
+            TextBox textbox = sender as TextBox;
+            if (validarTxtBox(textbox, regnum))
             {
-                txt_rampa_min_T1.ForeColor = Color.Red;
-                txt_rampa_min_T2.ForeColor = Color.Red;
-                txt_rampa_min_T3.ForeColor = Color.Red;
-                txt_rampa_min_T4.ForeColor = Color.Red;
-            }
-            else
-            {
-                txt_rampa_min_T1.ForeColor = Color.Black;
-                txt_rampa_min_T2.ForeColor = Color.Black;
-                txt_rampa_min_T3.ForeColor = Color.Black;
-                txt_rampa_min_T4.ForeColor = Color.Black;
+                validarRampas();
             }
         }
 
         private void txt_rampa_min_T4_TextChanged(object sender, EventArgs e)
         {
-            double R1;
-            double R2;
-            double R3;
-            double R4;
-            try { R1 = double.Parse(txt_rampa_min_T1.Text, 0); }
-            catch (Exception) { R1 = 0; }
-            try { R2 = txt_rampa_min_T2.Enabled ? double.Parse(txt_rampa_min_T2.Text) : 0; }
-            catch (Exception) { R2 = 0; }
-            try { R3 = txt_rampa_min_T3.Enabled ? double.Parse(txt_rampa_min_T3.Text) : 0; }
-            catch (Exception) { R3 = 0; }
-            try { R4 = txt_rampa_min_T4.Enabled ? double.Parse(txt_rampa_min_T4.Text) : 0; }
-            catch (Exception) { R4 = 0; }
-
-
-            if (R1 + R2 + R3 + R4 != double.Parse(txt_TempoMostura.Text))
+            TextBox textbox = sender as TextBox;
+            if (validarTxtBox(textbox, regnum))
             {
-                txt_rampa_min_T1.ForeColor = Color.Red;
-                txt_rampa_min_T2.ForeColor = Color.Red;
-                txt_rampa_min_T3.ForeColor = Color.Red;
-                txt_rampa_min_T4.ForeColor = Color.Red;
-            }
-            else
-            {
-                txt_rampa_min_T1.ForeColor = Color.Black;
-                txt_rampa_min_T2.ForeColor = Color.Black;
-                txt_rampa_min_T3.ForeColor = Color.Black;
-                txt_rampa_min_T4.ForeColor = Color.Black;
+                validarRampas();
             }
         }
 
         private void txt_TempoMostura_TextChanged(object sender, EventArgs e)
         {
-            if (txt_rampa_min_T2.Enabled != true)
+            TextBox textbox = sender as TextBox;
+
+            if (validarTxtBox(textbox, regnum))
             {
-                txt_rampa_min_T1.Text = txt_TempoMostura.Text;
+                txt_TempoMostura.ForeColor = Color.Black;
+
+                if (txt_rampa_min_T2.Enabled != true || R2 == 0)
+                {
+                    txt_rampa_min_T1.Text = txt_TempoMostura.Text;
+                }
+                validarRampas();
+            }
+            else
+            {
+                txt_TempoMostura.ForeColor = Color.Red;
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -1172,6 +1132,189 @@ namespace BrewHome
                 textBox_DH_peso.Enabled = false;
                 textBox_DH_peso.Text = "";
             }
+        }
+
+        private bool validarTxtBox(TextBox txtbox, Regex regex)
+        {
+            if (regex.IsMatch(txtbox.Text) )
+            {
+                return true;
+            }
+            else
+            {
+                
+                if (txtbox.Text.Length > 1)
+                {
+                    SystemSounds.Beep.Play();
+                    txtbox.Text = txtbox.Text.Remove(txtbox.Text.Length - 1);
+                }
+                else
+                {
+                    txtbox.Text = "";
+                }
+                return false;
+            }
+        }
+
+        private void validarRampas()
+        {
+            R1 = (txt_rampa_min_T1.Text != "") ? double.Parse(txt_rampa_min_T1.Text) : 0;
+            R2 = (txt_rampa_min_T2.Text != "") ? double.Parse(txt_rampa_min_T2.Text) : 0;
+            R3 = (txt_rampa_min_T3.Text != "") ? double.Parse(txt_rampa_min_T3.Text) : 0;
+            R4 = (txt_rampa_min_T4.Text != "") ? double.Parse(txt_rampa_min_T4.Text) : 0;
+
+            if (txt_TempoMostura.Text == "")
+            {
+                txt_TempoMostura.Text = (R1 + R2 + R3 + R4).ToString();
+                txt_rampa_min_T1.ForeColor = Color.Black;
+                txt_rampa_min_T2.ForeColor = Color.Black;
+                txt_rampa_min_T3.ForeColor = Color.Black;
+                txt_rampa_min_T4.ForeColor = Color.Black;
+            }
+
+            if (R1 + R2 + R3 + R4 != double.Parse(txt_TempoMostura.Text))
+            {
+                txt_rampa_min_T1.ForeColor = Color.Red;
+                txt_rampa_min_T2.ForeColor = Color.Red;
+                txt_rampa_min_T3.ForeColor = Color.Red;
+                txt_rampa_min_T4.ForeColor = Color.Red;
+            }
+            else
+            {
+                txt_rampa_min_T1.ForeColor = Color.Black;
+                txt_rampa_min_T2.ForeColor = Color.Black;
+                txt_rampa_min_T3.ForeColor = Color.Black;
+                txt_rampa_min_T4.ForeColor = Color.Black;
+            }
+        }
+
+        private void resetarForm(Control form)
+        {
+
+            lv_selecionados.Items.Clear();
+            lv_lpselecionados.Items.Clear();
+            lv_levedura_sl.Items.Clear();
+            leveduraMosto.Clear();
+            fermentaveisMosto.Clear();
+            lupuloMosto.Clear();
+            Loadlv_selecionados();
+            Loadlv_lp_selecionados();
+            Loadlv_lev_selecionados();
+            //receita.Estilo = null;
+            receita.Fermentaveis.Clear();
+            receita.Lupulos.Clear();
+            receita.Levedura = null;
+
+            CalcProp();
+
+            foreach (Control field in form.Controls)//ver funções recursivas
+            {
+                if (field is TextBox)
+                    ((TextBox)field).Clear();
+                if (field is ComboBox)
+                    ((ComboBox)field).SelectedIndex = 0;
+                if (field is GroupBox && field.Name != "groupSpecs")
+                {
+                    foreach (Control child in field.Controls)
+                    {
+                        if (child is TextBox)
+                            ((TextBox)child).Clear();
+                        if (child is RichTextBox)
+                            ((RichTextBox)child).Clear();
+                        if ((child is CheckBox))
+                            ((CheckBox)child).Checked = false;
+                        if (child is ComboBox)
+                            ((ComboBox)child).SelectedIndex = 0;
+                        if (child is GroupBox )
+                        {
+                            foreach (Control gchild in child.Controls)
+                            {
+                                if (gchild is TextBox)
+                                    ((TextBox)gchild).Clear();
+                                if (gchild is RichTextBox)
+                                    ((RichTextBox)gchild).Clear();
+                                if ((gchild is CheckBox))
+                                    ((CheckBox)gchild).Checked = false;
+                                if (gchild is ComboBox)
+                                    ((ComboBox)gchild).SelectedIndex = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void txt_FervuraMosto_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void Txt_TempoFermentacao_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_tempo_maturacao_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_temp_ferm_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_matura_temp_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void textBox_DH_peso_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_rampa_tempT1_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_rampa_tempT2_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_rampa_tempT3_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void txt_rampa_tempT4_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            validarTxtBox(textbox, regnum);
+        }
+
+        private void reset_form_Click(object sender, EventArgs e)
+        {
+            //Form form_receitas = sender as Form;
+            resetarForm(this);
+       
         }
     }
 }

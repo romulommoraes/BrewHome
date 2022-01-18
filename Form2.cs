@@ -45,5 +45,11 @@ namespace BrewHome
             Form_edit_lupulo f5 = new Form_edit_lupulo();
             f5.ShowDialog();
         }
+
+        private void levedurasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_edit_leveduras f6 = new Form_edit_leveduras();
+            f6.ShowDialog();
+        }
     }
 }

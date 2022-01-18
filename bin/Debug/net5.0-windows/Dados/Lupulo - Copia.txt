@@ -1,0 +1,33 @@
+Magnum;Amargor;13,5
+Nugget;Amargor;11,7
+Citra;Geral;13,7
+Admiral;Amargor;14,5
+Chinook;Geral;12
+Brewers Gold;Amargor;8,5
+Bullion;Amargor;9,5
+Centennial;Geral;10
+Challenger;Geral;7
+Cluster;Amargor;7
+Columbus;Geral;14,5
+Eroica;Amargor;13
+Galena;Amargor;13
+Nothern Brewer;Amargor;8,5
+Perle;Amargor;8
+Target;Amargor;9
+BC Goldings;Geral;6
+Cascade;Geral;6,5
+Crystal;Aroma;3,5
+Fuggles;Geral;4,5
+Hallertau Hersbrucker;Aroma;4
+Hallertau Mittelfruh;Aroma;4
+Liberty;Aroma;4
+Progress;Aroma;5,5
+Saaz;Aroma;3,4
+Spalt;Aroma;4,5
+Styrian Goldings;Aroma;4,5
+Ultra;Aroma;3,5
+Zeus;Amargor;15
+Tomahawk;Amargor;16
+Phoenix;Geral;10
+Olympic;Geral;12
+Lublin;Aroma;4

@@ -20,4 +20,3 @@ Lallemand WINDSOR;Ale;78;Baixa
 Lallemand Munich Classic(TRIGO);Ale;85;Baixa
 Lallemand Verdant Ipa;Ale;85;Média
 Lallemand Diamond;Lager;85;Alta
-Levedo de Pão;Kveik;83;452

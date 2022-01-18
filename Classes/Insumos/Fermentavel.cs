@@ -39,6 +39,11 @@ namespace BrewHome.Classes.Insumos
             PontosCor = (EBC * 0.508) * (PesoKG * 2.20462); //converte ebc pra srm e kg pra galão e calcula os pontos de cor
         }
 
+        public string ToTxt()
+        {
+            return $"{Nome};{Tipo};{EBC};{Extrato}";
+        }
+
 
 
     }

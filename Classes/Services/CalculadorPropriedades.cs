@@ -18,7 +18,7 @@ namespace BrewHome.Classes.Services
 
         }
 
-        public void CalcularPropriedades(float eficiencia)
+        public void CalcularPropriedades(double eficiencia)
         {
           
             double TotalPontosAcucar = 0;

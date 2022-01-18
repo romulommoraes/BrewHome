@@ -25,3 +25,4 @@ C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_sobre.resources
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_edit_ferm.resources
 C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_edit_lupulo.resources
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\obj\Debug\net5.0-windows\BrewHome.Form_edit_leveduras.resources
