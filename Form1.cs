@@ -49,7 +49,6 @@ namespace BrewHome
         double R2;
         double R3;
         double R4;
-
         public Form_receitas()
         {
             InitializeComponent();
@@ -301,8 +300,7 @@ namespace BrewHome
                 {
                     //MessageBox.Show("Nenhum estilo selecionado");
                 }
-                else
-                {
+                else                {
                     MessageBox.Show("Nenhum fermentavel selecionado");
                 }
             }

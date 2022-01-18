@@ -65,6 +65,7 @@ namespace BrewHome
             txt_nome.Enabled = true;
             txt_atenuacao.Enabled = true;
             comboBox_tipo.Enabled = true;
+            comboBox_Flocula.Enabled = true;
             btn_submeter.Enabled = true;
         }
 

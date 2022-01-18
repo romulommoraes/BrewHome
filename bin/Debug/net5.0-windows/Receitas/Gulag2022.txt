@@ -4,50 +4,53 @@
  *******************************************************
  
 
- Receita: Tripé 2 
- Estilo: Belgian Trippel
+ Receita: Gulag2022 
+ Estilo: Russian Imperial Stout
  
  Volume: 10(L) 
- OG: 1077
- FG: 1012
+ OG: 1084
+ FG: 1019
  ABV: 8,5
- SRM: 6,6
- EBC: 13,2
- IBU: 21,8
+ SRM: 39,6
+ EBC: 79,2
+ IBU: 55,3
  
  Fermentáveis:
- Maris Otter: 0,5(KG)
- Munich Malt: 0,5(KG)
  Pale Ale: 2(KG)
- Trigo(German Wheat): 0,5(KG)
+ Munich 10 (Dark Munich): 1(KG)
+ Melanoidin Malt: 0,5(KG)
+ Melaço: 0,25(KG)
+ Black Malt: 0,25(KG)
  
  Lúpulos:
- Citra: 9(g)
+ Columbus: 15(g)
+ Challenger: 15(g)
  
  Levedura:
- Safale BE-256
+ Safale S-04
  
  Mosturacao: 60(Min) 
  Rampas:
  Temperatura: 50°C: 10 Min 
- Temperatura: 65°C: 50 Min 
+ Temperatura: 68°C: 10 Min 
+ Temperatura: 65°C: 40 Min 
  
- Comentários: teste 
+ Comentários:  
 
  Fervura: 60(Min)
- Comentários: teste 
+ Comentários:  
 
- Tempo de Fermentação: 7(Dias)
+ Tempo de Fermentação: 15(Dias)
  Temperatura de Fermentação: 18°C
 
- Tempo de Maturação: 5(Dias)
- Temperatura de Maturação:1°C
+ Tempo de Maturação: 7(Dias)
+ Temperatura de Maturação:5°C
 
  DryHopping: -
 
- Comentários: teste
+ Comentários: 
  
 
  *******************************************************
- ***************** 17/01/2022 23:48:21 *****************
+ ***************** 18/01/2022 11:34:07 *****************
  *******************************************************

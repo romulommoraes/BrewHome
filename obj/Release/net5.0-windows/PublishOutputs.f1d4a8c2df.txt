@@ -1,0 +1,5 @@
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\publish\BrewHome.exe
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\publish\BrewHome.dll
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\publish\BrewHome.deps.json
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\publish\BrewHome.runtimeconfig.json
+C:\Users\Rômulo Maciel\source\repos\BrewHome\BrewHome\bin\publish\BrewHome.pdb

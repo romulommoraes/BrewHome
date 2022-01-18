@@ -67,3 +67,4 @@ Trigo(Oak Smoked);Especial;6;87
 UK Pilsner 2 Row;Base;4;78
 Victory Malt;Especial;52;74
 Vienna Malt;Base;8;78
+Cevada Torrada;Especial;1000;80

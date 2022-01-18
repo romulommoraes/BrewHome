@@ -13,7 +13,9 @@ namespace BrewHome.Classes
     {
         public string Nome { get;  set; }
 
-        public string Estilo { get; set; } 
+        public string Estilo { get; set; }
+
+        public string Tipo { get; set; }
         public double VolumeFinal { get; set; }
 
         public List<Fermentavel> Fermentaveis { get; set; }
