@@ -99,7 +99,20 @@ namespace BrewHome.Classes.Services
             {
                 Receita.FG = 0;
                 Receita.ABV = 0;
+                
             }
+        }
+
+        public void calcBUGU()
+        {
+            if (Receita.OG -1000 > 0)
+            {
+                Receita.BU_GU = Math.Round(Receita.IBU / (Receita.OG - 1000), 3);
+            }
+            else
+            {
+                Receita.BU_GU = 0;
+            }            
         }
 
         public void CalcularCalorias()

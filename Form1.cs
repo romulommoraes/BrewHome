@@ -415,10 +415,12 @@ namespace BrewHome
             CalculadorPropriedades calc = new(receita);
             calc.CalcularPropriedades(eficiencia);
             calc.CalcularIBU();
+            calc.calcBUGU();
 
 
             lbl_og.Text = calc.Receita.OG.ToString();
             lbl_ibu.Text = calc.Receita.IBU.ToString();
+            lbl_BUGU.Text = calc.Receita.BU_GU.ToString();
 
             if (calc.Receita.Levedura != null)
             {
@@ -433,6 +435,7 @@ namespace BrewHome
                 lbl_abv.Text = "0";
                 lbl_fg.Text = "0";
                 lbl_kcal.Text = "0";
+                lbl_BUGU.Text = "0";
             }
 
             lbl_srm.Text = receita.COR.ToString();
@@ -492,6 +495,15 @@ namespace BrewHome
                 {
                     lbl_iburange.ForeColor = Color.Green;
                 }
+                string[] BU_GUrange = lbl_BUGU_range.Text.Split("-");
+                if (receita.BU_GU < double.Parse(BU_GUrange[0]) || receita.BU_GU > double.Parse(BU_GUrange[1]))
+                {
+                    lbl_BUGU_range.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lbl_BUGU_range.ForeColor = Color.Green;
+                }
             }
 
             if (comboBox1.SelectedIndex == 0)
@@ -502,12 +514,14 @@ namespace BrewHome
                 lbl_srmrange.Text = "0";
                 lbl_ebcrange.Text = "0";
                 lbl_iburange.Text = "0";
+                lbl_BUGU_range.Text = "0";
                 lbl_ogrange.ForeColor = Color.Black;
                 lbl_fgrange.ForeColor = Color.Black;
                 lbl_abvrange.ForeColor = Color.Black;
                 lbl_srmrange.ForeColor = Color.Black;
                 lbl_ebcrange.ForeColor = Color.Black;
                 lbl_iburange.ForeColor = Color.Black;
+                lbl_BUGU_range.ForeColor = Color.Black;
             }
 
 
@@ -798,6 +812,8 @@ namespace BrewHome
                     lbl_srmrange.Text = $"{item.SRMRange[0]}-{item.SRMRange[1]}";
                     lbl_ebcrange.Text = $"{item.SRMRange[0] * 2}-{item.SRMRange[1] * 2}";
                     lbl_iburange.Text = $"{item.IBURange[0]}-{item.IBURange[1]}";
+
+                    lbl_BUGU_range.Text = $"{item.BUGURange[0]}-{item.BUGURange[1]}";
                     receita.Estilo = indice;
                 }
             }
@@ -827,7 +843,7 @@ namespace BrewHome
                 receita.Fermentacao = receitaLoad.Fermentacao;
                 receita.Maturacao = receitaLoad.Maturacao;
                 receita.Dryhopping = receitaLoad.Dryhopping;
-
+                receita.BU_GU = receitaLoad.BUGU;
                 receita.ComentariosMostura = receitaLoad.ComentariosMostura;
                 receita.ComentariosFervura = receitaLoad.ComentariosFervura;
                 receita.ComentariosFermMat = receitaLoad.ComentariosFermMat;

@@ -35,6 +35,8 @@ namespace BrewHome.Classes.JSON
         public string ComentariosFervura { get; set; }
         public string ComentariosFermMat { get; set; }
 
+        public double BUGU { get; set; }
+
         public ReceitaToJSon()
         {
             Fermentaveis = new();
@@ -43,6 +45,7 @@ namespace BrewHome.Classes.JSON
             Fermentacao = new double[2];
             Maturacao = new double[2];
             Dryhopping = new string[3];
+
         }
 
         public string ExportRampas()

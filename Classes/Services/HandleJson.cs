@@ -26,6 +26,7 @@ namespace BrewHome.Classes.Services
             receitaToJSon.IBU = Math.Round(receita.IBU, 1);
             receitaToJSon.SRM = Math.Round(receita.COR, 1);
             receitaToJSon.EBC = Math.Round(receita.COR*2, 1);
+            receitaToJSon.BUGU = receita.BU_GU;
             receitaToJSon.TempoMostura = tempomostura; 
             receitaToJSon.TempoFervura = tempofervura;
             receitaToJSon.Levedura = receita.Levedura.Nome;

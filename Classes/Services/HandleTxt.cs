@@ -80,8 +80,11 @@ namespace BrewHome.Classes.Services
                 double[] SRMrange = new double[] { double.Parse(SRMrangeST[0]), double.Parse(SRMrangeST[1]) };
                 string[] IBUrangeST = est[6].Split("-");
                 double[] IBUrange = new double[] { double.Parse(IBUrangeST[0]), double.Parse(IBUrangeST[1]) };
+                string[] BUGUrangeST = est[7].Split("-");
+                double[] BUGUrange = new double[] { double.Parse(BUGUrangeST[0]), double.Parse(BUGUrangeST[1]) };
 
-                Estilo estilo = new(est[0].ToString(), est[1].ToString(), ogrange, fgrange, ABVrange, SRMrange, IBUrange);
+
+                Estilo estilo = new(est[0].ToString(), est[1].ToString(), ogrange, fgrange, ABVrange, SRMrange, IBUrange, BUGUrange);
 
                 estilosLoad.Add(estilo);
             }
@@ -102,6 +105,7 @@ namespace BrewHome.Classes.Services
             receitaToJSon.SRM = Math.Round(receita.COR, 1);
             receitaToJSon.Calorias = Math.Round(receita.Calorias, 1);
             receitaToJSon.EBC = Math.Round(receita.COR * 2, 1);
+            receitaToJSon.BUGU = receita.BU_GU;
             receitaToJSon.TempoMostura = tempomostura;
             receitaToJSon.TempoFervura = tempofervura;
 
@@ -140,7 +144,8 @@ namespace BrewHome.Classes.Services
                 $"\n ABV: {receitaToJSon.ABV}" +
                 $"\n SRM: {receitaToJSon.SRM}" +
                 $"\n EBC: {receitaToJSon.EBC}" +
-                $"\n IBU: {receitaToJSon.IBU}";
+                $"\n IBU: {receitaToJSon.IBU}" +
+                $"\n BU-GU: {receitaToJSon.BUGU}";
             string fermentaveis = "Fermentáveis:";
             foreach (var item in receitaToJSon.Fermentaveis)
             {

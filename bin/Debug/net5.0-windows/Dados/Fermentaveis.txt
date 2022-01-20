@@ -69,3 +69,5 @@ Victory Malt;Especial;52;74
 Vienna Malt;Base;8;78
 Cevada Torrada;Especial;1000;80
 Tapioca;Adjunto;1;80
+Trigo(Flocos);Especial;4;87
+Trigo(Farinha);Especial;3;87

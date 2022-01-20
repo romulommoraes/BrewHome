@@ -58,6 +58,8 @@ namespace BrewHome
             this.lbl_ibu = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_BUGU = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.lbl_kcal = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.lbl_abv = new System.Windows.Forms.Label();
@@ -80,6 +82,8 @@ namespace BrewHome
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_BUGU_range = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.lbl_abvrange = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lbl_fgrange = new System.Windows.Forms.Label();
@@ -194,7 +198,7 @@ namespace BrewHome
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 22);
+            this.label3.Location = new System.Drawing.Point(4, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 6;
@@ -204,7 +208,7 @@ namespace BrewHome
             // 
             this.lbl_og.AutoSize = true;
             this.lbl_og.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_og.Location = new System.Drawing.Point(65, 23);
+            this.lbl_og.Location = new System.Drawing.Point(63, 19);
             this.lbl_og.Name = "lbl_og";
             this.lbl_og.Size = new System.Drawing.Size(13, 13);
             this.lbl_og.TabIndex = 7;
@@ -349,7 +353,7 @@ namespace BrewHome
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(6, 67);
+            this.label7.Location = new System.Drawing.Point(4, 63);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 22;
@@ -359,7 +363,7 @@ namespace BrewHome
             // 
             this.lbl_srm.AutoSize = true;
             this.lbl_srm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_srm.Location = new System.Drawing.Point(65, 68);
+            this.lbl_srm.Location = new System.Drawing.Point(63, 63);
             this.lbl_srm.Name = "lbl_srm";
             this.lbl_srm.Size = new System.Drawing.Size(13, 13);
             this.lbl_srm.TabIndex = 23;
@@ -369,7 +373,7 @@ namespace BrewHome
             // 
             this.lbl_ebc.AutoSize = true;
             this.lbl_ebc.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ebc.Location = new System.Drawing.Point(65, 83);
+            this.lbl_ebc.Location = new System.Drawing.Point(63, 78);
             this.lbl_ebc.Name = "lbl_ebc";
             this.lbl_ebc.Size = new System.Drawing.Size(13, 13);
             this.lbl_ebc.TabIndex = 24;
@@ -379,7 +383,7 @@ namespace BrewHome
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(6, 97);
+            this.label8.Location = new System.Drawing.Point(4, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 13);
             this.label8.TabIndex = 25;
@@ -389,7 +393,7 @@ namespace BrewHome
             // 
             this.lbl_ibu.AutoSize = true;
             this.lbl_ibu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ibu.Location = new System.Drawing.Point(65, 98);
+            this.lbl_ibu.Location = new System.Drawing.Point(63, 93);
             this.lbl_ibu.Name = "lbl_ibu";
             this.lbl_ibu.Size = new System.Drawing.Size(13, 13);
             this.lbl_ibu.TabIndex = 26;
@@ -399,7 +403,7 @@ namespace BrewHome
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(6, 82);
+            this.label9.Location = new System.Drawing.Point(4, 78);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 27;
@@ -407,6 +411,8 @@ namespace BrewHome
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_BUGU);
+            this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.lbl_kcal);
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Controls.Add(this.lbl_abv);
@@ -429,11 +435,30 @@ namespace BrewHome
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Características";
             // 
+            // lbl_BUGU
+            // 
+            this.lbl_BUGU.AutoSize = true;
+            this.lbl_BUGU.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_BUGU.Location = new System.Drawing.Point(63, 108);
+            this.lbl_BUGU.Name = "lbl_BUGU";
+            this.lbl_BUGU.Size = new System.Drawing.Size(13, 13);
+            this.lbl_BUGU.TabIndex = 34;
+            this.lbl_BUGU.Text = "0";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(4, 108);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(44, 13);
+            this.label36.TabIndex = 33;
+            this.label36.Text = "BU/GU:";
+            // 
             // lbl_kcal
             // 
             this.lbl_kcal.AutoSize = true;
             this.lbl_kcal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_kcal.Location = new System.Drawing.Point(65, 121);
+            this.lbl_kcal.Location = new System.Drawing.Point(63, 123);
             this.lbl_kcal.Name = "lbl_kcal";
             this.lbl_kcal.Size = new System.Drawing.Size(13, 13);
             this.lbl_kcal.TabIndex = 33;
@@ -443,7 +468,7 @@ namespace BrewHome
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label31.Location = new System.Drawing.Point(6, 121);
+            this.label31.Location = new System.Drawing.Point(6, 123);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(55, 12);
             this.label31.TabIndex = 32;
@@ -453,7 +478,7 @@ namespace BrewHome
             // 
             this.lbl_abv.AutoSize = true;
             this.lbl_abv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_abv.Location = new System.Drawing.Point(65, 53);
+            this.lbl_abv.Location = new System.Drawing.Point(63, 48);
             this.lbl_abv.Name = "lbl_abv";
             this.lbl_abv.Size = new System.Drawing.Size(13, 13);
             this.lbl_abv.TabIndex = 31;
@@ -463,7 +488,7 @@ namespace BrewHome
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(6, 52);
+            this.label12.Location = new System.Drawing.Point(4, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 13);
             this.label12.TabIndex = 30;
@@ -473,7 +498,7 @@ namespace BrewHome
             // 
             this.lbl_fg.AutoSize = true;
             this.lbl_fg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_fg.Location = new System.Drawing.Point(65, 38);
+            this.lbl_fg.Location = new System.Drawing.Point(63, 33);
             this.lbl_fg.Name = "lbl_fg";
             this.lbl_fg.Size = new System.Drawing.Size(13, 13);
             this.lbl_fg.TabIndex = 29;
@@ -483,7 +508,7 @@ namespace BrewHome
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(6, 37);
+            this.label10.Location = new System.Drawing.Point(5, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 28;
@@ -643,6 +668,8 @@ namespace BrewHome
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lbl_BUGU_range);
+            this.groupBox3.Controls.Add(this.label35);
             this.groupBox3.Controls.Add(this.lbl_abvrange);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.lbl_fgrange);
@@ -656,18 +683,37 @@ namespace BrewHome
             this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.lbl_ebcrange);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(133, 223);
+            this.groupBox3.Location = new System.Drawing.Point(130, 223);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(111, 146);
+            this.groupBox3.Size = new System.Drawing.Size(114, 146);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Estilo";
+            // 
+            // lbl_BUGU_range
+            // 
+            this.lbl_BUGU_range.AutoSize = true;
+            this.lbl_BUGU_range.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_BUGU_range.Location = new System.Drawing.Point(48, 108);
+            this.lbl_BUGU_range.Name = "lbl_BUGU_range";
+            this.lbl_BUGU_range.Size = new System.Drawing.Size(13, 13);
+            this.lbl_BUGU_range.TabIndex = 35;
+            this.lbl_BUGU_range.Text = "0";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 108);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 13);
+            this.label35.TabIndex = 32;
+            this.label35.Text = "BU/GU:";
             // 
             // lbl_abvrange
             // 
             this.lbl_abvrange.AutoSize = true;
             this.lbl_abvrange.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_abvrange.Location = new System.Drawing.Point(48, 53);
+            this.lbl_abvrange.Location = new System.Drawing.Point(48, 48);
             this.lbl_abvrange.Name = "lbl_abvrange";
             this.lbl_abvrange.Size = new System.Drawing.Size(13, 13);
             this.lbl_abvrange.TabIndex = 31;
@@ -677,7 +723,7 @@ namespace BrewHome
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(6, 53);
+            this.label14.Location = new System.Drawing.Point(6, 48);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(30, 13);
             this.label14.TabIndex = 30;
@@ -687,7 +733,7 @@ namespace BrewHome
             // 
             this.lbl_fgrange.AutoSize = true;
             this.lbl_fgrange.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_fgrange.Location = new System.Drawing.Point(48, 37);
+            this.lbl_fgrange.Location = new System.Drawing.Point(48, 33);
             this.lbl_fgrange.Name = "lbl_fgrange";
             this.lbl_fgrange.Size = new System.Drawing.Size(13, 13);
             this.lbl_fgrange.TabIndex = 29;
@@ -697,7 +743,7 @@ namespace BrewHome
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(6, 37);
+            this.label16.Location = new System.Drawing.Point(6, 33);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(24, 13);
             this.label16.TabIndex = 28;
@@ -707,7 +753,7 @@ namespace BrewHome
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(6, 69);
+            this.label17.Location = new System.Drawing.Point(6, 63);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(33, 13);
             this.label17.TabIndex = 22;
@@ -717,7 +763,7 @@ namespace BrewHome
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(6, 22);
+            this.label18.Location = new System.Drawing.Point(6, 18);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(27, 13);
             this.label18.TabIndex = 6;
@@ -727,7 +773,7 @@ namespace BrewHome
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(6, 85);
+            this.label19.Location = new System.Drawing.Point(6, 78);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 13);
             this.label19.TabIndex = 27;
@@ -737,7 +783,7 @@ namespace BrewHome
             // 
             this.lbl_ogrange.AutoSize = true;
             this.lbl_ogrange.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ogrange.Location = new System.Drawing.Point(48, 22);
+            this.lbl_ogrange.Location = new System.Drawing.Point(48, 18);
             this.lbl_ogrange.Name = "lbl_ogrange";
             this.lbl_ogrange.Size = new System.Drawing.Size(13, 13);
             this.lbl_ogrange.TabIndex = 7;
@@ -747,7 +793,7 @@ namespace BrewHome
             // 
             this.lbl_iburange.AutoSize = true;
             this.lbl_iburange.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_iburange.Location = new System.Drawing.Point(48, 101);
+            this.lbl_iburange.Location = new System.Drawing.Point(48, 93);
             this.lbl_iburange.Name = "lbl_iburange";
             this.lbl_iburange.Size = new System.Drawing.Size(13, 13);
             this.lbl_iburange.TabIndex = 26;
@@ -757,7 +803,7 @@ namespace BrewHome
             // 
             this.lbl_srmrange.AutoSize = true;
             this.lbl_srmrange.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_srmrange.Location = new System.Drawing.Point(48, 69);
+            this.lbl_srmrange.Location = new System.Drawing.Point(48, 63);
             this.lbl_srmrange.Name = "lbl_srmrange";
             this.lbl_srmrange.Size = new System.Drawing.Size(13, 13);
             this.lbl_srmrange.TabIndex = 23;
@@ -767,7 +813,7 @@ namespace BrewHome
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.Location = new System.Drawing.Point(6, 101);
+            this.label23.Location = new System.Drawing.Point(6, 93);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(27, 13);
             this.label23.TabIndex = 25;
@@ -777,7 +823,7 @@ namespace BrewHome
             // 
             this.lbl_ebcrange.AutoSize = true;
             this.lbl_ebcrange.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ebcrange.Location = new System.Drawing.Point(48, 85);
+            this.lbl_ebcrange.Location = new System.Drawing.Point(48, 78);
             this.lbl_ebcrange.Name = "lbl_ebcrange";
             this.lbl_ebcrange.Size = new System.Drawing.Size(13, 13);
             this.lbl_ebcrange.TabIndex = 24;
@@ -1383,6 +1429,10 @@ namespace BrewHome
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.CheckBox checkBox_dryhopping;
         private System.Windows.Forms.Button reset_form;
+        private System.Windows.Forms.Label lbl_BUGU;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lbl_BUGU_range;
+        private System.Windows.Forms.Label label35;
     }
 }
 

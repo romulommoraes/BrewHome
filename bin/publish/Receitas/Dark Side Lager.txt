@@ -1,0 +1,52 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Dark Side Lager 
+ Estilo: Dark Lager
+ 
+ Volume: 10(L) 
+ OG: 1049
+ FG: 1009
+ ABV: 5,2
+ SRM: 38,3
+ EBC: 76,6
+ IBU: 13,6
+ BU-GU: 0,278
+ 
+ Fermentáveis:
+ Pilsen: 1,5(KG)
+ Melanoidin Malt: 0,5(KG)
+ Cevada Torrada: 0,3(KG)
+ 
+ Lúpulos:
+ Magnum: 4(g)
+ 
+ Levedura:
+ SafLager S-23
+ 
+ Mosturacao: 69(Min) 
+ Rampas:
+ Temperatura: 67°C: 60 Min 
+ 
+ Comentários:  
+
+ Fervura: 60(Min)
+ Comentários:  
+
+ Tempo de Fermentação: 7(Dias)
+ Temperatura de Fermentação: 12°C
+
+ Tempo de Maturação: 3(Dias)
+ Temperatura de Maturação:4°C
+
+ DryHopping: -
+
+ Comentários: 
+ 
+
+ *******************************************************
+ ***************** 20/01/2022 17:00:45 *****************
+ *******************************************************

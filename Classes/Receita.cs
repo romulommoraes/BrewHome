@@ -38,6 +38,7 @@ namespace BrewHome.Classes
         public string ComentariosMostura { get; set; }
         public string ComentariosFervura { get; set; }
         public string ComentariosFermMat { get; set; }
+        public double BU_GU { get; set; }
 
 
         public Receita()
@@ -49,6 +50,9 @@ namespace BrewHome.Classes
             Maturacao = new double[2];
             Dryhopping = new string[3];
         }
+
+
+
         public void SetNome(string nome)
         {
             Nome = nome;

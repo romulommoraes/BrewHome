@@ -8,7 +8,7 @@ namespace BrewHome.Classes
 {
     public class Estilo
     {
-        public Estilo(string nome, string tipo, double[] oGRange, double[] fGRange, double[] aBVRange, double[] sRMRange, double[] iBURange)
+        public Estilo(string nome, string tipo, double[] oGRange, double[] fGRange, double[] aBVRange, double[] sRMRange, double[] iBURange, double[] buguRange)
         {
             Nome = nome;
             Tipo = tipo;
@@ -17,6 +17,7 @@ namespace BrewHome.Classes
             ABVRange = aBVRange;
             SRMRange = sRMRange;
             IBURange = iBURange;
+            BUGURange = buguRange;
         }
 
         public string Nome { get; set; }
@@ -26,5 +27,6 @@ namespace BrewHome.Classes
         public double[] ABVRange { get; set; }
         public double[] SRMRange { get; set; }
         public double[] IBURange { get; set; }
+        public double[] BUGURange { get; set; }
     }
 }

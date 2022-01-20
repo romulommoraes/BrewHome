@@ -4,33 +4,33 @@
  *******************************************************
  
 
- Receita: Brown Ale 
- Estilo: American Brown Ale
+ Receita: Munich Helles 
+ Estilo: Munich Helles
  
  Volume: 10(L) 
- OG: 1057
- FG: 1013
- ABV: 5,8
- SRM: 18,4
- EBC: 36,8
- IBU: 25,8
+ OG: 1047
+ FG: 1008
+ ABV: 5,1
+ SRM: 4,8
+ EBC: 9,6
+ IBU: 17
+ BU-GU: 0,362
  
  Fermentáveis:
- Açucar Mascavo(escuro): 0,1(KG)
- CaraFoam: 0,1(KG)
- Maris Otter: 0,5(KG)
- Pale Ale: 1(KG)
- Special Roast: 1(KG)
+ Pilsen: 1,5(KG)
+ Munich Malt: 0,5(KG)
+ Trigo(Flocos): 0,2(KG)
  
  Lúpulos:
- Brewers Gold: 15(g)
+ Magnum: 5(g)
  
  Levedura:
- Lallemand WINDSOR
+ SafLager S-23
  
  Mosturacao: 60(Min) 
  Rampas:
- Temperatura: 68°C: 60 Min 
+ Temperatura: 50°C: 10 Min 
+ Temperatura: 66°C: 50 Min 
  
  Comentários:  
 
@@ -38,10 +38,10 @@
  Comentários:  
 
  Tempo de Fermentação: 7(Dias)
- Temperatura de Fermentação: 14°C
+ Temperatura de Fermentação: 12°C
 
- Tempo de Maturação: 4(Dias)
- Temperatura de Maturação:10°C
+ Tempo de Maturação: 5(Dias)
+ Temperatura de Maturação:4°C
 
  DryHopping: -
 
@@ -49,5 +49,5 @@
  
 
  *******************************************************
- ***************** 17/01/2022 23:55:52 *****************
+ ***************** 20/01/2022 16:53:54 *****************
  *******************************************************
