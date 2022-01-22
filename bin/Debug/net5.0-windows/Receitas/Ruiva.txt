@@ -4,34 +4,35 @@
  *******************************************************
  
 
- Receita: Trippel 
- Estilo: Belgian Trippel
+ Receita: Ruiva 
+ Estilo: Irish Red Ale
  
  Volume: 10(L) 
- OG: 1077
- FG: 1012
- ABV: 8,5
- SRM: 6,6
- EBC: 13,2
- IBU: 21,8
- BU-GU: 0,283
+ OG: 1046
+ FG: 1009
+ ABV: 4,9
+ SRM: 14,9
+ EBC: 29,8
+ IBU: 18,9
+ BU-GU: 0,411
  
  Fermentáveis:
- Maris Otter: 0,5(KG)
- Munich Malt: 0,5(KG)
- Pale Ale: 2(KG)
- Trigo(German Wheat): 0,5(KG)
+ Pilsen: 1,5(KG)
+ Melanoidin Malt: 0,3(KG)
+ Trigo(Farinha): 0,15(KG)
+ Cevada Torrada: 0,05(KG)
+ Melaço: 0,1(KG)
  
  Lúpulos:
- Citra: 9(g): 45(Min)
+ Nugget: 5(g): 45(Min)
+ Nugget: 5(g): 10(Min)
  
  Levedura:
- Safale BE-256
+ Safale US-05
  
  Mosturacao: 60(Min) 
  Rampas:
- Temperatura: 50°C: 10 Min 
- Temperatura: 65°C: 50 Min 
+ Temperatura: 68°C: 60 Min 
  
  Comentários:  
 
@@ -39,10 +40,10 @@
  Comentários:  
 
  Tempo de Fermentação: 7(Dias)
- Temperatura de Fermentação: 18°C
+ Temperatura de Fermentação: 14°C
 
- Tempo de Maturação: 5(Dias)
- Temperatura de Maturação:1°C
+ Tempo de Maturação: 3(Dias)
+ Temperatura de Maturação:5°C
 
  DryHopping: -
 
@@ -50,5 +51,5 @@
  
 
  *******************************************************
- ***************** 21/01/2022 22:17:36 *****************
+ ***************** 21/01/2022 22:24:27 *****************
  *******************************************************

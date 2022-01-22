@@ -1,4 +1,4 @@
-Melaço;Adjunto;160;78
+Melaço;Adjunto;160;80
 Açucar Mascavo(claro);Adjunto;8;100
 Açucar Mascavo(escuro);Adjunto;50;100
 2-Row Malt;Base;4;78
@@ -54,7 +54,7 @@ Munich 10 (Dark Munich);Especial;20;76
 Munich Malt;Base;18;80
 Pale Ale;Base;6;80
 Pale Chocolate;Especial;700;74
-Pilsen;Base;4;78
+Pilsen;Base;4;81
 Red X;Base;24;78
 Roasted Barley;Especial;600;54
 Special B;Especial;360;65

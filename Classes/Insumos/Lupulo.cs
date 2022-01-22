@@ -23,7 +23,6 @@ namespace BrewHome.Classes.Insumos
        public double AlfaAcido { get; set; }
        public double PesoG { get; set; }
         public double Pontos { get; set; }
-
         public double TempoFervura { get; set; }
 
 

@@ -154,7 +154,7 @@ namespace BrewHome.Classes.Services
             string lupulos = "Lúpulos:";
             foreach (var item in receitaToJSon.Lupulos)
             {
-                lupulos += $"\n {item.Nome}: {item.Peso}(g)";
+                lupulos += $"\n {item.Nome}: {item.Peso}(g): {item.TempoFervura}(Min)";
             }
             string rampas = receitaToJSon.ExportRampas();
             string dryhopping = (receitaToJSon.Dryhopping[0] != "") ? $"{receitaToJSon.Dryhopping[0]}, { receitaToJSon.Dryhopping[1]}g, { receitaToJSon.Dryhopping[2]}(Dias)" : "-";

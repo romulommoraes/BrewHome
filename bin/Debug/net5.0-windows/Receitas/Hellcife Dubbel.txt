@@ -4,33 +4,34 @@
  *******************************************************
  
 
- Receita: Trippel 
- Estilo: Belgian Trippel
+ Receita: Hellcife Dubbel 
+ Estilo: Belgian Dubbel
  
  Volume: 10(L) 
- OG: 1077
- FG: 1012
- ABV: 8,5
- SRM: 6,6
- EBC: 13,2
- IBU: 21,8
- BU-GU: 0,283
+ OG: 1065
+ FG: 1013
+ ABV: 6,8
+ SRM: 12,6
+ EBC: 25,2
+ IBU: 32
+ BU-GU: 0,492
  
  Fermentáveis:
- Maris Otter: 0,5(KG)
- Munich Malt: 0,5(KG)
+ Melanoidin Malt: 0,25(KG)
  Pale Ale: 2(KG)
- Trigo(German Wheat): 0,5(KG)
+ Melaço: 0,25(KG)
+ Vienna Malt: 0,5(KG)
  
  Lúpulos:
- Citra: 9(g): 45(Min)
+ Magnum: 6(g): 60(Min)
+ Challenger: 11(g): 45(Min)
  
  Levedura:
- Safale BE-256
+ SafAle T-58
  
  Mosturacao: 60(Min) 
  Rampas:
- Temperatura: 50°C: 10 Min 
+ Temperatura: 68°C: 60 Min 
  Temperatura: 65°C: 50 Min 
  
  Comentários:  
@@ -38,11 +39,11 @@
  Fervura: 60(Min)
  Comentários:  
 
- Tempo de Fermentação: 7(Dias)
- Temperatura de Fermentação: 18°C
+ Tempo de Fermentação: 0(Dias)
+ Temperatura de Fermentação: 0°C
 
- Tempo de Maturação: 5(Dias)
- Temperatura de Maturação:1°C
+ Tempo de Maturação: 0(Dias)
+ Temperatura de Maturação:0°C
 
  DryHopping: -
 
@@ -50,5 +51,5 @@
  
 
  *******************************************************
- ***************** 21/01/2022 22:17:36 *****************
+ ***************** 21/01/2022 22:18:50 *****************
  *******************************************************

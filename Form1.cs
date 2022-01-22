@@ -38,6 +38,7 @@ namespace BrewHome
 
         string FermentavelSelecionado = "";
         string LupuloSelecionado = "";
+        string fervuraLupuloSelecionado = "";
         double eficiencia;
 
         Regex regnum = new Regex(@"^\d*\,?\d+$|^[,]{1}$|^\d*\,$");
@@ -557,14 +558,16 @@ namespace BrewHome
                 string selectedNome = lv_lupulos.SelectedItems[0].SubItems[0].Text;
                 string selectedTipo = lv_lupulos.SelectedItems[0].SubItems[1].Text;
                 string selectedAlfa = lv_lupulos.SelectedItems[0].SubItems[2].Text;
-                Lupulo selected = new(selectedNome, selectedTipo, double.Parse(selectedAlfa), double.Parse(txt_peso_g.Text), double.Parse(txt_tempo_fervura.Text));
+                string selectedTempo = txt_tempo_fervura.Text;
+                string selectedPeso = txt_peso_g.Text;
+                Lupulo selected = new(selectedNome, selectedTipo, double.Parse(selectedAlfa), double.Parse(selectedPeso), double.Parse(selectedTempo));
 
                 if (lupuloMosto.Count > 0)
                 {
                     bool contem = false;
                     foreach (var lup in lupuloMosto)
                     {
-                        if (lup.Nome.Equals(selectedNome))
+                        if (lup.Nome.Equals(selectedNome) && lup.TempoFervura.Equals(selectedTempo))
                         {
                             lup.PesoG += double.Parse(txt_peso_g.Text);
                             contem = true;
@@ -759,9 +762,10 @@ namespace BrewHome
                 {
                     foreach (var item in receita.Lupulos)
                     {
-                        if (item.Nome.Equals(LupuloSelecionado) && LupuloSelecionado != "")
+                        if (item.Nome.Equals(LupuloSelecionado) && item.TempoFervura.Equals(double.Parse(fervuraLupuloSelecionado)) && LupuloSelecionado != "")
                         {
                             item.TempoFervura = (double.Parse(txt_tempo_fervura.Text));
+                            fervuraLupuloSelecionado = txt_tempo_fervura.Text;
                             CalcProp();
                             Loadlv_lp_selecionados();
                             break;
@@ -793,6 +797,9 @@ namespace BrewHome
             try
             {
                 LupuloSelecionado = lv_lpselecionados.SelectedItems[0].SubItems[0].Text;
+                
+                fervuraLupuloSelecionado = lv_lpselecionados.SelectedItems[0].SubItems[2].Text;
+
             }
             catch (Exception)
             {
