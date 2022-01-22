@@ -4,32 +4,34 @@
  *******************************************************
  
 
- Receita: Dark Side Lager 
- Estilo: Dark Lager
+ Receita: Trippel 
+ Estilo: Belgian Trippel
  
  Volume: 10(L) 
- OG: 1049
- FG: 1009
- ABV: 5,2
- SRM: 38,3
- EBC: 76,6
- IBU: 13,6
- BU-GU: 0,278
+ OG: 1077
+ FG: 1012
+ ABV: 8,5
+ SRM: 6,6
+ EBC: 13,2
+ IBU: 21,8
+ BU-GU: 0,283
  
  Fermentáveis:
- Pilsen: 1,5(KG)
- Melanoidin Malt: 0,5(KG)
- Cevada Torrada: 0,3(KG)
+ Maris Otter: 0,5(KG)
+ Munich Malt: 0,5(KG)
+ Pale Ale: 2(KG)
+ Trigo(German Wheat): 0,5(KG)
  
  Lúpulos:
- Magnum: 4(g)
+ Citra: 9(g): 45(Min)
  
  Levedura:
- SafLager S-23
+ Safale BE-256
  
- Mosturacao: 69(Min) 
+ Mosturacao: 60(Min) 
  Rampas:
- Temperatura: 67°C: 60 Min 
+ Temperatura: 50°C: 10 Min 
+ Temperatura: 65°C: 50 Min 
  
  Comentários:  
 
@@ -37,10 +39,10 @@
  Comentários:  
 
  Tempo de Fermentação: 7(Dias)
- Temperatura de Fermentação: 12°C
+ Temperatura de Fermentação: 18°C
 
- Tempo de Maturação: 3(Dias)
- Temperatura de Maturação:4°C
+ Tempo de Maturação: 5(Dias)
+ Temperatura de Maturação:1°C
 
  DryHopping: -
 
@@ -48,5 +50,5 @@
  
 
  *******************************************************
- ***************** 20/01/2022 17:00:45 *****************
+ ***************** 21/01/2022 22:17:36 *****************
  *******************************************************

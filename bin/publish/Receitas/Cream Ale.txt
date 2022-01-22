@@ -4,44 +4,43 @@
  *******************************************************
  
 
- Receita: Munich Helles 
- Estilo: Munich Helles
+ Receita: Cream Ale 
+ Estilo: Cream Ale
  
  Volume: 10(L) 
  OG: 1047
- FG: 1008
- ABV: 5,1
- SRM: 4,8
- EBC: 9,6
- IBU: 17
- BU-GU: 0,362
+ FG: 1009
+ ABV: 5
+ SRM: 3,2
+ EBC: 6,4
+ IBU: 15,7
  
  Fermentáveis:
- Pilsen: 1,5(KG)
- Munich Malt: 0,5(KG)
- Trigo(Flocos): 0,2(KG)
+ Pilsen: 2(KG)
+ CaraFoam: 0,1(KG)
+ Trigo (White Wheat): 0,1(KG)
  
  Lúpulos:
  Magnum: 5(g)
  
  Levedura:
- SafLager S-23
+ Safale US-05
  
  Mosturacao: 60(Min) 
  Rampas:
  Temperatura: 50°C: 10 Min 
- Temperatura: 66°C: 50 Min 
+ Temperatura: 65°C: 50 Min 
  
  Comentários:  
 
  Fervura: 60(Min)
  Comentários:  
 
- Tempo de Fermentação: 7(Dias)
- Temperatura de Fermentação: 12°C
+ Tempo de Fermentação: 0(Dias)
+ Temperatura de Fermentação: 0°C
 
- Tempo de Maturação: 5(Dias)
- Temperatura de Maturação:4°C
+ Tempo de Maturação: 0(Dias)
+ Temperatura de Maturação:0°C
 
  DryHopping: -
 
@@ -49,5 +48,5 @@
  
 
  *******************************************************
- ***************** 20/01/2022 16:53:54 *****************
+ ***************** 18/01/2022 10:37:21 *****************
  *******************************************************

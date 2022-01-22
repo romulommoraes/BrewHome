@@ -1,0 +1,42 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Hellcife Dubbel 
+ Estilo: Belgian Dubbel
+ 
+ Volume: 10(L) 
+ OG: 1064,5
+ FG: 1012,9
+ ABV: 6,8
+ SRM: 12,6
+ EBC: 25,2
+ IBU: 17,1
+ 
+ Fermentáveis:
+ Melanoidin Malt: 0,25(KG)
+ Pale Ale: 2(KG)
+ Melaço: 0,25(KG)
+ Vienna Malt: 0,5(KG)
+ 
+ Lúpulos:
+ Magnum: 6(g)
+ 
+ Levedura:
+ SafAle T-58
+ 
+ Mosturacao: 60(Min) 
+ Fervura: 60(Min)
+ Tempo de Fermentação: PLACEHOLDER
+ Temperatura de Fermentação: PLACEHOLDER
+ Tempo de Maturação: PLACEHOLDER
+ Temperatura de Maturação: PLACEHOLDER
+ DryHopping: PLACEHOLDER
+ Comentários: PLACEHOLDER
+ 
+
+ *******************************************************
+ ***************** 15/01/2022 00:57:20 *****************
+ *******************************************************

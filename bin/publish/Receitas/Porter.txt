@@ -1,0 +1,54 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Porter 
+ Estilo: Brown Porter
+ 
+ Volume: 10(L) 
+ OG: 1052
+ FG: 1012
+ ABV: 5,2
+ SRM: 21,3
+ EBC: 42,6
+ IBU: 24,3
+ 
+ Fermentáveis:
+ Amber Malt: 1(KG)
+ Aveia Malte: 0,45(KG)
+ Biscuit Malt: 1(KG)
+ Black Malt: 0,05(KG)
+ 
+ Lúpulos:
+ Columbus: 5(g)
+ Galena: 15(g)
+ 
+ Levedura:
+ Safale S-04
+ 
+ Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 50°C: 10 Min 
+ Temperatura: 68°C: 50 Min 
+ 
+ Comentários:  
+
+ Fervura: 60(Min)
+ Comentários:  
+
+ Tempo de Fermentação: 7(Dias)
+ Temperatura de Fermentação: 18°C
+
+ Tempo de Maturação: 5(Dias)
+ Temperatura de Maturação:4°C
+
+ DryHopping: -
+
+ Comentários: 
+ 
+
+ *******************************************************
+ ***************** 18/01/2022 10:38:37 *****************
+ *******************************************************

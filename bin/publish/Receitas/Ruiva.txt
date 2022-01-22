@@ -1,0 +1,55 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Ruiva 
+ Estilo: Irish Red Ale
+ 
+ Volume: 10(L) 
+ OG: 1046
+ FG: 1009
+ ABV: 4,9
+ SRM: 14,9
+ EBC: 29,8
+ IBU: 18,9
+ BU-GU: 0,411
+ 
+ Fermentáveis:
+ Pilsen: 1,5(KG)
+ Melanoidin Malt: 0,3(KG)
+ Trigo(Farinha): 0,15(KG)
+ Cevada Torrada: 0,05(KG)
+ Melaço: 0,1(KG)
+ 
+ Lúpulos:
+ Nugget: 5(g): 45(Min)
+ Nugget: 5(g): 10(Min)
+ 
+ Levedura:
+ Safale US-05
+ 
+ Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 68°C: 60 Min 
+ 
+ Comentários:  
+
+ Fervura: 60(Min)
+ Comentários:  
+
+ Tempo de Fermentação: 7(Dias)
+ Temperatura de Fermentação: 14°C
+
+ Tempo de Maturação: 3(Dias)
+ Temperatura de Maturação:5°C
+
+ DryHopping: -
+
+ Comentários: 
+ 
+
+ *******************************************************
+ ***************** 21/01/2022 22:24:27 *****************
+ *******************************************************

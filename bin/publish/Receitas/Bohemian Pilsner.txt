@@ -1,0 +1,51 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Bohemia Romulus 
+ Estilo: Bohemian Pilsner
+ 
+ Volume: 10(L) 
+ OG: 1051
+ FG: 1013
+ ABV: 5
+ SRM: 4,3
+ EBC: 8,6
+ IBU: 37,4
+ 
+ Fermentáveis:
+ Pilsen: 2(KG)
+ CaraFoam: 0,1(KG)
+ Munich Malt: 0,3(KG)
+ 
+ Lúpulos:
+ Magnum: 12(g)
+ 
+ Levedura:
+ M.Jack M84
+ 
+ Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 68°C: 60 Min 
+ 
+ Comentários:  
+
+ Fervura: 60(Min)
+ Comentários:  
+
+ Tempo de Fermentação: 0(Dias)
+ Temperatura de Fermentação: 0°C
+
+ Tempo de Maturação: 0(Dias)
+ Temperatura de Maturação:0°C
+
+ DryHopping: -
+
+ Comentários: 
+ 
+
+ *******************************************************
+ ***************** 17/01/2022 19:19:54 *****************
+ *******************************************************

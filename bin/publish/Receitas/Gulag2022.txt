@@ -1,0 +1,57 @@
+
+ *******************************************************
+ ************* RECEITA GERADA POR BREWHOME *************
+ *******************************************************
+ 
+
+ Receita: Gulag2022 
+ Estilo: Russian Imperial Stout
+ 
+ Volume: 10(L) 
+ OG: 1084
+ FG: 1019
+ ABV: 8,5
+ SRM: 39,6
+ EBC: 79,2
+ IBU: 55,3
+ BU-GU: 0,658
+ 
+ Fermentáveis:
+ Pale Ale: 2(KG)
+ Munich 10 (Dark Munich): 1(KG)
+ Melanoidin Malt: 0,5(KG)
+ Melaço: 0,25(KG)
+ Black Malt: 0,25(KG)
+ 
+ Lúpulos:
+ Columbus: 15(g)
+ Challenger: 15(g)
+ 
+ Levedura:
+ Safale S-04
+ 
+ Mosturacao: 60(Min) 
+ Rampas:
+ Temperatura: 50°C: 10 Min 
+ Temperatura: 68°C: 10 Min 
+ Temperatura: 65°C: 40 Min 
+ 
+ Comentários:  
+
+ Fervura: 60(Min)
+ Comentários:  
+
+ Tempo de Fermentação: 15(Dias)
+ Temperatura de Fermentação: 18°C
+
+ Tempo de Maturação: 7(Dias)
+ Temperatura de Maturação:5°C
+
+ DryHopping: -
+
+ Comentários: 
+ 
+
+ *******************************************************
+ ***************** 20/01/2022 16:36:32 *****************
+ *******************************************************
